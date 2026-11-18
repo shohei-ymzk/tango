@@ -1,0 +1,4216 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>TANGO｜高校受験の英単語</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f0; --card:#ffffff; --ink:#13212b; --sub:#5b6b76; --line:#dce5e1;
+  --navy:#0f2a3c; --navy2:#163a52; --yellow:#ffc531; --yellow-ink:#3a2b00;
+  --teal:#0aa88f; --teal-bg:#e2f5f1; --red:#e8503a; --red-bg:#fdecea;
+  --s:#e8503a; --a:#e8890c; --b:#0a7ea4; --c:#5b6b76; --d:#7a4fa3; --e:#1f7a4d;
+  --s-bg:#fdecea; --a-bg:#fdf0dc; --b-bg:#e3f2f7; --c-bg:#edf0f2; --d-bg:#f0e8f7; --e-bg:#e2f2e8;
+  --shadow:0 10px 28px rgba(15,42,60,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d171e; --card:#16242f; --ink:#eef4f2; --sub:#9db0ba; --line:#2a3d49;
+  --teal-bg:#12332e; --red-bg:#3d201b; --s-bg:#3d201b; --a-bg:#3a2c12; --b-bg:#12303d; --c-bg:#24333d; --shadow:0 10px 28px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"M PLUS Rounded 1c",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;min-height:44px}
+.en{font-family:"Archivo",sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:14px 14px 40px}
+
+/* ===== Start panel ===== */
+.start{background:var(--navy);color:#fff;border-radius:20px;padding:20px 18px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:baseline;gap:10px;margin-bottom:9px}
+.brand-name{font-size:30px;font-weight:900;letter-spacing:.14em;color:var(--yellow);line-height:1}
+.brand-sub{font-size:12px;font-weight:800;color:#bcd0dd;letter-spacing:.06em}
+.start h1{font-size:24px;line-height:1.4;margin:0;font-weight:800}
+.start-meta{margin:10px 0 0;font-size:13px;color:#bcd0dd;font-weight:700;line-height:1.7}
+.start-meta b{color:var(--yellow)}
+.start-actions{margin-top:16px}
+.start-btn{border-radius:14px;font-weight:800;font-size:15px;padding:13px 10px;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;width:100%}
+.start-btn.primary{background:var(--yellow);border-color:var(--yellow);color:var(--yellow-ink);font-size:18px;padding:17px 10px}
+.start-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+@media(max-width:560px){.start h1{font-size:21px}.start-sub .start-btn{font-size:12.5px;padding:12px 4px}}
+.howto p.body{font-size:13.5px;line-height:1.9;color:var(--sub);font-weight:600;margin:0}
+.howto p.body b{color:var(--ink)}
+.howto details{margin-top:12px}
+.howto summary{font-weight:800;font-size:14px;cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--ink)}
+.howto details p{font-size:13.5px;line-height:1.9;color:var(--sub);font-weight:600;margin:4px 0 0}
+.howto details p b{color:var(--ink)}
+
+/* ===== Player header ===== */
+.player{background:var(--navy);color:#fff;border-radius:20px;padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.player::after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:rgba(255,197,49,.16)}
+.player-top{display:flex;gap:16px;align-items:center;position:relative;z-index:1}
+.lv-circle{flex:none;width:76px;height:76px;border-radius:50%;background:var(--yellow);color:var(--yellow-ink);display:flex;flex-direction:column;align-items:center;justify-content:center;border:4px solid rgba(255,255,255,.85)}
+.lv-circle small{font-size:11px;font-weight:800;letter-spacing:.08em;line-height:1}
+.lv-circle b{font-size:30px;line-height:1;font-family:"Archivo",sans-serif;font-weight:900}
+.player-info{flex:1;min-width:0}
+.player-title{font-weight:800;font-size:19px;line-height:1.3}
+.player-sub{font-size:12.5px;color:#bcd0dd;margin-top:2px}
+.xp-row{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#dcebf5;margin-top:12px}
+.xp-bar{height:12px;background:rgba(255,255,255,.22);border-radius:99px;overflow:hidden;margin-top:5px}
+.xp-fill{height:100%;background:var(--yellow);border-radius:99px;transition:width .5s ease;width:0%}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 6px;text-align:center}
+.stat b{display:block;font-size:19px;font-family:"Archivo",sans-serif}
+.stat span{font-size:11px;color:#bcd0dd;font-weight:700}
+.levelup-banner{display:none;margin-top:12px;background:var(--yellow);color:var(--yellow-ink);font-weight:800;border-radius:12px;padding:10px 14px;text-align:center;position:relative;z-index:1}
+.levelup-banner.show{display:block}
+
+/* ===== Rank map ===== */
+.rankmap{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px;box-shadow:var(--shadow)}
+.rankmap h2{font-size:15px;margin:0 0 4px}
+.rankmap p.lead{margin:0 0 12px;font-size:12.5px;color:var(--sub);line-height:1.6}
+.rank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:560px){.rank-grid{grid-template-columns:repeat(2,1fr)}}
+.rank-box{border-radius:14px;padding:12px;border:1.5px solid var(--line);background:var(--card);text-align:left;width:100%}
+.rank-box.active{border-color:var(--navy);outline:2px solid var(--yellow)}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;font-family:"Archivo",sans-serif;font-weight:900;font-size:16px;color:#fff}
+.rb-S{background:var(--s)} .rb-A{background:var(--a)} .rb-B{background:var(--b)} .rb-C{background:var(--c)} .rb-D{background:var(--d)} .rb-E{background:var(--e)}
+.rank-name{font-weight:800;font-size:13px;margin-top:7px}
+.rank-desc{font-size:11px;color:var(--sub);line-height:1.5;min-height:32px}
+.rank-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:7px}
+.rank-prog i{display:block;height:100%;border-radius:99px}
+.rank-count{font-size:11.5px;font-weight:800;margin-top:5px}
+.conquered{font-size:11px;font-weight:800;color:var(--teal)}
+
+/* ===== Mode tabs ===== */
+.tabs{display:flex;gap:8px;margin-top:14px}
+.tab{flex:1;border:1.5px solid var(--line);background:var(--card);border-radius:13px;font-weight:800;font-size:15px;padding:11px 4px;color:var(--ink)}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:560px){.tab{font-size:12.5px;padding:10px 2px}}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 14px;font-weight:800;font-size:13px;min-height:40px}
+.chip.active{background:var(--yellow);border-color:var(--yellow);color:var(--yellow-ink)}
+.chip.weak.active{background:var(--red);border-color:var(--red);color:#fff}
+.filter-note{font-size:12px;color:var(--sub);font-weight:700}
+
+/* ===== Flashcard ===== */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);margin-top:12px;padding:18px}
+.deck-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.deck-head .pos{font-size:13px;color:var(--sub);font-weight:800}
+.progress-line{height:9px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:10px}
+.progress-line i{display:block;height:100%;background:var(--teal);transition:width .3s}
+.flash{margin-top:16px;border:2px solid var(--line);border-radius:18px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px 18px;cursor:pointer;background:linear-gradient(180deg,var(--card),var(--bg));width:100%;color:var(--ink)}
+.flash .rank-tag{font-size:12px;font-weight:800;padding:5px 12px;border-radius:99px}
+.tag-S{background:var(--s-bg);color:var(--s)} .tag-A{background:var(--a-bg);color:var(--a)} .tag-B{background:var(--b-bg);color:var(--b)} .tag-C{background:var(--c-bg);color:var(--c)} .tag-D{background:var(--d-bg);color:var(--d)} .tag-E{background:var(--e-bg);color:var(--e)}
+.cat-tag{display:inline-block;font-size:11px;font-weight:800;background:var(--navy);color:#fff;border-radius:99px;padding:4px 10px;margin-left:6px;vertical-align:middle}
+.flash .word{font-size:52px;font-weight:900;letter-spacing:-.01em;line-height:1.1;margin-top:14px;word-break:break-word}
+.flash .word.small{font-size:38px}
+.flash .hint{margin-top:10px;color:var(--sub);font-size:13px;font-weight:700}
+.flash .meaning{font-size:30px;font-weight:800;margin-top:12px;line-height:1.4}
+.flash .example{margin-top:14px;font-size:15px;line-height:1.7;color:var(--sub);max-width:520px}
+.flash .example .en{font-weight:700;color:var(--ink);font-size:16px}
+.mastered-mark{margin-top:10px;font-size:12px;font-weight:800;color:var(--teal)}
+.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.btn{border-radius:13px;font-weight:800;font-size:16px;padding:13px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-know{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn-dont{background:var(--card);border-color:var(--red);color:var(--red)}
+.btn-next{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn-ghost{font-size:13px;padding:9px 14px;min-height:40px}
+.sub-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.speak-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:99px;padding:9px 20px;font-weight:800;font-size:14px;min-height:42px}
+
+/* ===== Quiz ===== */
+.quiz-q{text-align:center;padding:8px 0 4px}
+.quiz-q .q-label{font-size:12.5px;font-weight:800;color:var(--sub)}
+.quiz-q .q-word{font-size:44px;font-weight:900;margin-top:8px;line-height:1.15;word-break:break-word}
+.quiz-q .q-word.jp{font-size:32px;font-family:"M PLUS Rounded 1c",sans-serif}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media(max-width:560px){.choices{grid-template-columns:1fr}}
+.choice{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:13px;padding:15px;font-size:16.5px;font-weight:800;text-align:left;line-height:1.45}
+.choice.correct{border-color:var(--teal);background:var(--teal-bg)}
+.choice.wrong{border-color:var(--red);background:var(--red-bg)}
+.choice:disabled{opacity:.85;cursor:default}
+.feedback{display:none;margin-top:14px;border-radius:13px;padding:13px 15px;font-weight:800;line-height:1.6;font-size:15px}
+.feedback.show{display:block}
+.feedback.ok{background:var(--teal-bg);color:var(--teal)}
+.feedback.ng{background:var(--red-bg);color:var(--red)}
+.feedback small{display:block;color:var(--ink);font-weight:700;margin-top:4px}
+.combo{font-size:13px;font-weight:800;color:var(--a)}
+
+/* ===== List ===== */
+.search{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;background:var(--card);color:var(--ink);font-family:inherit;min-height:48px}
+.word-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+@media(max-width:560px){.word-list{grid-template-columns:1fr}}
+.witem{border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;background:var(--card);display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;color:var(--ink)}
+.witem .dot{flex:none;width:11px;height:11px;border-radius:50%;margin-top:7px;background:var(--line)}
+.witem.mastered .dot{background:var(--teal)}
+.witem.weak .dot{background:var(--red)}
+.witem .w-en{font-weight:800;font-size:17.5px}
+.witem .w-ja{font-size:13.5px;color:var(--sub);font-weight:700;margin-top:1px}
+.witem .w-meta{margin-left:auto;flex:none;text-align:right}
+.mini-rank{font-family:"Archivo",sans-serif;font-weight:900;font-size:12px;color:#fff;border-radius:6px;padding:2px 7px}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-top:14px}
+.howto h2{font-size:15px;margin:0 0 8px}
+.howto ul{margin:0;padding-left:19px;font-size:13.5px;line-height:1.9;color:var(--sub);font-weight:600}
+.howto b{color:var(--ink)}
+.empty{padding:34px 10px;text-align:center;color:var(--sub);font-weight:800;line-height:1.7}
+footer{margin-top:18px;font-size:12px;color:var(--sub);line-height:1.7;text-align:center;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Start -->
+  <section class="start" aria-label="今日の学習">
+    <div class="brand"><span class="brand-name en">TANGO</span><span class="brand-sub">高校受験の英単語</span></div>
+    <h1>英単語だけを、徹底的に覚える。</h1>
+    <p class="start-meta">収録 <span id="totalWordsText">3,333</span> 語 ・ 全語ランク（S〜E）付き ・ 覚えた <b id="todayMastered">0</b> 語 ・ 苦手 <b id="todayWeak">0</b> 語</p>
+    <div class="start-actions">
+      <button class="start-btn primary" id="startCard" type="button">カードで学習をはじめる</button>
+      <div class="start-sub">
+        <button class="start-btn" id="startQuiz" type="button">4択クイズ</button>
+        <button class="start-btn" id="startListen" type="button">聞き取りクイズ</button>
+        <button class="start-btn" id="startWeak" type="button">苦手を復習</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <nav class="tabs" aria-label="モード切替">
+    <button class="tab active" data-mode="card">カードで覚える</button>
+    <button class="tab" data-mode="quiz">4択クイズ</button>
+    <button class="tab" data-mode="listen">聞き取りクイズ</button>
+    <button class="tab" data-mode="list">単語帳</button>
+  </nav>
+
+  <div class="filters" id="rankFilters">
+    <button class="chip active" data-rank="ALL">すべて</button>
+    <button class="chip" data-rank="S">Sランク</button>
+    <button class="chip" data-rank="A">Aランク</button>
+    <button class="chip" data-rank="B">Bランク</button>
+    <button class="chip" data-rank="C">Cランク</button>
+    <button class="chip" data-rank="D">D 難関・熟語</button>
+    <button class="chip" data-rank="E">E 最難関</button>
+    <button class="chip" data-rank="PHRASE">熟語だけ</button>
+    <button class="chip" data-rank="IRREG">不規則動詞だけ</button>
+    <button class="chip weak" data-rank="WEAK">苦手だけ</button>
+    <span class="filter-note" id="deckCount"></span>
+  </div>
+
+  <!-- Card mode -->
+  <section class="panel" id="view-card">
+    <div class="deck-head">
+      <span class="pos" id="cardPos"></span>
+      <span class="pos" id="cardIndex"></span>
+    </div>
+    <div class="progress-line"><i id="cardProg" style="width:0%"></i></div>
+    <div class="flash" id="flashCard" role="button" tabindex="0" aria-label="カードをめくる"></div>
+    <div class="card-actions" id="cardActions">
+      <button class="btn btn-dont" id="btnDont">まだ… ＋0 XP</button>
+      <button class="btn btn-know" id="btnKnow">覚えた！ ＋10 XP</button>
+    </div>
+    <div class="sub-actions">
+      <button class="btn btn-ghost" id="btnSkip">スキップ →</button>
+      <button class="btn btn-ghost" id="btnShuffle">シャッフル</button>
+      <button class="btn btn-ghost" id="btnRestartDeck">最初から</button>
+    </div>
+  </section>
+
+  <!-- Quiz mode -->
+  <section class="panel" id="view-quiz" hidden>
+    <div class="deck-head">
+      <span class="pos" id="quizInfo"></span>
+      <span class="combo" id="quizCombo"></span>
+    </div>
+    <div class="progress-line"><i id="quizProg" style="width:0%"></i></div>
+    <div class="quiz-q">
+      <div class="q-label" id="quizLabel"></div>
+      <div class="q-word en" id="quizWord"></div>
+      <button class="speak-btn" id="quizSpeak">音声を聞く</button>
+    </div>
+    <div class="choices" id="quizChoices"></div>
+    <div class="feedback" id="quizFeedback"></div>
+    <div class="card-actions">
+      <button class="btn btn-next" id="btnNextQuiz" hidden>次の問題へ → （正解＋20 XP）</button>
+    </div>
+  </section>
+
+  <!-- Listening quiz mode -->
+  <section class="panel" id="view-listen" hidden>
+    <div class="deck-head">
+      <span class="pos" id="listenInfo"></span>
+      <span class="combo" id="listenCombo"></span>
+    </div>
+    <div class="progress-line"><i id="listenProg" style="width:0%"></i></div>
+    <div class="quiz-q">
+      <div class="q-label">音声を聞いて、意味を選ぼう（単語は答えたあとに表示されます）</div>
+      <div class="q-word en" id="listenWord">？ ？ ？</div>
+      <button class="speak-btn" id="listenPlay" style="font-size:16px;padding:13px 30px">音声を聞く</button>
+    </div>
+    <div class="choices" id="listenChoices"></div>
+    <div class="feedback" id="listenFeedback"></div>
+    <div class="card-actions">
+      <button class="btn btn-next" id="btnNextListen" hidden>次の問題へ → （正解＋20 XP）</button>
+    </div>
+    <div class="filter-note" id="listenStats" style="margin-top:12px;text-align:center"></div>
+  </section>
+
+  <!-- List mode -->
+  <section class="panel" id="view-list" hidden>
+    <input class="search" id="searchInput" type="search" placeholder="単語・意味で検索（例：important / 大切）" aria-label="単語検索">
+    <div class="word-list" id="wordList"></div>
+    <div class="empty" id="listEmpty" hidden>見つかりませんでした。検索のことばを変えてみてね。</div>
+  </section>
+
+  <!-- Player status -->
+  <section class="player" aria-label="プレイヤーステータス">
+    <div class="player-top">
+      <div class="lv-circle"><small>LEVEL</small><b id="lvNum">1</b></div>
+      <div class="player-info">
+        <div class="player-title" id="lvTitle">単語ビギナー</div>
+        <div class="player-sub">高校入試の英単語を、ランク順に制覇していこう。</div>
+        <div class="xp-row"><span id="xpText">0 XP</span><span id="xpNext">次のレベルまで あと100 XP</span></div>
+        <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+      </div>
+    </div>
+    <div class="levelup-banner" id="levelupBanner"></div>
+    <div class="stat-row">
+      <div class="stat"><b id="statMastered">0</b><span>覚えた単語</span></div>
+      <div class="stat"><b id="statQuiz">0%</b><span>クイズ正答率</span></div>
+      <div class="stat"><b id="statCombo">0</b><span>最高連続正解</span></div>
+      <div class="stat"><b id="statTotal">0</b><span>収録単語</span></div>
+    </div>
+  </section>
+
+  <!-- Rank map -->
+  <section class="rankmap" aria-label="ランクマップ">
+    <h2>ランクマップ ― Sから順に制覇しよう</h2>
+    <p class="lead">ランクは入試での出やすさ・重要度順。タップすると、そのランクだけに絞って学習できます。まずはSを全部「覚えた」にするのが目標。各ランクの詳しい説明は、下の「このアプリについて」にあります。</p>
+    <div class="rank-grid" id="rankGrid"></div>
+  </section>
+
+  <section class="howto">
+    <h2>遊び方・レベルアップのしくみ</h2>
+    <ul>
+      <li><b>カードで「覚えた！」</b> → ＋10 XP。<b>クイズ・聞き取りクイズ正解</b> → ＋20 XP、<b>3連続正解</b>ごとにボーナス＋10 XP。</li>
+      <li><b>聞き取りクイズ</b>は、音声で流れる英単語を聞いて、意味を4択から選ぶモード。聞き取るのは単語だけに絞っていて、長文の聞き取り教材は入っていない。まちがえた単語は通常のクイズと同じく苦手リストに入る。</li>
+      <li>XPがたまると<b>レベルアップ</b>。レベルが上がると称号も上がっていく。</li>
+      <li>まちがえた単語は<b>「苦手」</b>に自動で入り、「苦手だけ」フィルターで集中復習できる。復習で正解すると苦手から外れる。</li>
+      <li>進み方は <b>S → A → B → C → D → E</b> の順がおすすめ。SとAを制覇すれば入試長文の土台は完成。D・Eの熟語と発展語彙が、難関校で差をつける。</li>
+      <li><b>熟語カード</b>は英語のフレーズがそのまま出る。<b>不規則動詞カード</b>は「原形 → 過去形 → 過去分詞」の順で表示されるので、声に出して覚えよう。</li>
+    </ul>
+  </section>
+
+  <section class="howto" aria-label="このアプリについて">
+    <h2>このアプリについて ― 英単語専門の理由</h2>
+    <p class="body">他の英語アプリと違い、このアプリは機能を<b>英単語の暗記だけ</b>に絞っています。文法ドリルも、長文読解もありません。リスニングも、英単語を聞いて意味を選ぶ「聞き取りクイズ」だけに絞っています。その代わり、高校受験で問われる単語を<b>約<span id="totalWordsText2">3,333</span>語</b>収録し、1語ごとに<b>入試ランク（S〜E）</b>を付けました。中2の今のうちに単語を制覇しておくことが、3年での長文・英作文の伸びを決めます。</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px">
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center"><b style="display:block;font-size:16px">単語だけ</b><span style="font-size:11.5px;color:var(--sub);font-weight:700">機能は暗記に集中</span></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center"><b style="display:block;font-size:16px">全語ランク付き</b><span style="font-size:11.5px;color:var(--sub);font-weight:700">S→Eの順に制覇</span></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center"><b style="display:block;font-size:16px">熟語・不規則も</b><span style="font-size:11.5px;color:var(--sub);font-weight:700">入試の出題範囲を網羅</span></div>
+    </div>
+    <details>
+      <summary>ランク（S〜E）の詳しい説明</summary>
+      <p>ランクは入試での出やすさ・重要度と難しさ順。S＝超頻出、A＝頻出、B＝標準、C＝発展が基本語彙。その上に、入試で問われる<b>熟語・連語</b>を集めた <b>D＝難関・熟語</b> と、<b>不規則動詞の活用</b>と難関・上位校の発展語彙を集めた <b>E＝最難関</b> を上乗せしています。各ランクの収録数は上のランクマップに表示されます。進み方は <b>S → A → B → C → D → E</b> の順がおすすめ。SとAを制覇すれば入試長文の土台は完成し、D・Eの熟語と発展語彙が難関校で差をつけます。</p>
+    </details>
+  </section>
+
+  <footer>TANGOは英単語の暗記だけに特化した、単語専門アプリです。収録語は中学校の学習指導要領の語彙と、公立・私立高校入試の頻出語・熟語をもとに構成しています。</footer>
+</div>
+
+<script>
+"use strict";
+/* ============ WORD DATA ============
+   形式: 英語|意味|品詞|ランク|区分(空=単語 / 熟語 / 発展 / 不規則)
+   ランク: S=超頻出 A=頻出 B=標準 C=発展 D=難関・熟語 E=最難関 */
+const RAW = `people|人々・人たち|名|S|
+person|人|名|S|
+friend|友達|名|S|
+family|家族|名|S|
+father|父|名|S|
+mother|母|名|S|
+brother|兄・弟|名|S|
+sister|姉・妹|名|S|
+student|生徒・学生|名|S|
+teacher|先生|名|S|
+school|学校|名|S|
+class|授業・クラス|名|S|
+English|英語|名|S|
+Japanese|日本語・日本の|名・形|S|
+math|数学|名|S|
+science|理科・科学|名|S|
+music|音楽|名|S|
+sport|スポーツ|名|S|
+book|本|名|S|
+word|単語・言葉|名|S|
+question|質問・問題|名|S|
+answer|答え|名|S|
+time|時間・時刻|名|S|
+day|日・一日|名|S|
+week|週|名|S|
+month|月|名|S|
+year|年|名|S|
+today|今日|名・副|S|
+tomorrow|明日|名・副|S|
+yesterday|昨日|名・副|S|
+morning|朝|名|S|
+afternoon|午後|名|S|
+evening|夕方|名|S|
+night|夜|名|S|
+home|家・家庭|名|S|
+house|家・住宅|名|S|
+room|部屋|名|S|
+town|町|名|S|
+city|市・都市|名|S|
+country|国・田舎|名|S|
+Japan|日本|名|S|
+world|世界|名|S|
+food|食べ物|名|S|
+water|水|名|S|
+dog|犬|名|S|
+cat|猫|名|S|
+bird|鳥|名|S|
+fish|魚|名|S|
+tree|木|名|S|
+flower|花|名|S|
+sea|海|名|S|
+river|川|名|S|
+mountain|山|名|S|
+rain|雨|名|S|
+snow|雪|名|S|
+sun|太陽|名|S|
+sky|空|名|S|
+weather|天気|名|S|
+season|季節|名|S|
+spring|春|名|S|
+summer|夏|名|S|
+fall|秋|名|S|
+winter|冬|名|S|
+name|名前|名|S|
+thing|物・こと|名|S|
+way|道・方法|名|S|
+place|場所|名|S|
+hand|手|名|S|
+eye|目|名|S|
+head|頭|名|S|
+body|体|名|S|
+life|生活・命|名|S|
+story|物語・話|名|S|
+picture|絵・写真|名|S|
+song|歌|名|S|
+movie|映画|名|S|
+game|試合・ゲーム|名|S|
+club|クラブ・部活|名|S|
+team|チーム|名|S|
+letter|手紙・文字|名|S|
+money|お金|名|S|
+be|〜である・〜にいる|動|S|
+have|持っている・〜がある|動|S|
+do|する|動|S|
+go|行く|動|S|
+come|来る|動|S|
+see|見える・会う|動|S|
+know|知っている|動|S|
+get|得る・〜になる|動|S|
+make|作る・〜にする|動|S|
+take|取る・連れていく|動|S|
+think|思う・考える|動|S|
+say|言う|動|S|
+tell|話す・教える|動|S|
+speak|話す|動|S|
+talk|話す・おしゃべりする|動|S|
+listen|聞く・耳を傾ける|動|S|
+hear|聞こえる|動|S|
+read|読む|動|S|
+write|書く|動|S|
+learn|学ぶ・覚える|動|S|
+study|勉強する|動|S|
+teach|教える|動|S|
+help|助ける・手伝う|動|S|
+want|欲しい・〜したい|動|S|
+need|必要とする|動|S|
+like|好きである|動|S|
+love|大好きである・愛する|動|S|
+enjoy|楽しむ|動|S|
+play|遊ぶ・演奏する・する（競技）|動|S|
+sing|歌う|動|S|
+swim|泳ぐ|動|S|
+run|走る|動|S|
+walk|歩く|動|S|
+live|住む・生きる|動|S|
+work|働く・勉強する|動|S|
+buy|買う|動|S|
+sell|売る|動|S|
+eat|食べる|動|S|
+drink|飲む|動|S|
+cook|料理する|動|S|
+use|使う|動|S|
+look|見る・〜に見える|動|S|
+watch|（注意して）見る|動|S|
+find|見つける|動|S|
+give|与える・あげる|動|S|
+bring|持ってくる・連れてくる|動|S|
+show|見せる・示す|動|S|
+start|始める・始まる|動|S|
+finish|終える・終わる|動|S|
+begin|始める・始まる|動|S|
+open|開ける・開く|動|S|
+close|閉める・閉じる|動|S|
+stop|止める・止まる|動|S|
+try|試す・〜しようとする|動|S|
+call|呼ぶ・電話する|動|S|
+ask|たずねる・頼む|動|S|
+wait|待つ|動|S|
+meet|会う・出会う|動|S|
+visit|訪れる|動|S|
+travel|旅行する|動|S|
+arrive|到着する|動|S|
+leave|去る・出発する・残す|動|S|
+become|〜になる|動|S|
+feel|感じる|動|S|
+hope|望む|動|S|
+wish|願う|動|S|
+believe|信じる|動|S|
+understand|理解する|動|S|
+remember|覚えている・思い出す|動|S|
+forget|忘れる|動|S|
+keep|保つ・〜し続ける|動|S|
+let|〜させる|動|S|
+put|置く|動|S|
+stand|立つ|動|S|
+sit|座る|動|S|
+turn|曲がる・回る・〜になる|動|S|
+grow|育つ・成長する・育てる|動|S|
+send|送る|動|S|
+receive|受け取る|動|S|
+choose|選ぶ|動|S|
+decide|決める・決心する|動|S|
+change|変える・変わる|動|S|
+move|動く・引っ越す|動|S|
+stay|とどまる・滞在する|動|S|
+good|良い|形|S|
+bad|悪い|形|S|
+big|大きい|形|S|
+small|小さい|形|S|
+large|大きい・広い|形|S|
+long|長い|形|S|
+short|短い・背が低い|形|S|
+high|高い|形|S|
+low|低い|形|S|
+new|新しい|形|S|
+old|古い・年をとった|形|S|
+young|若い|形|S|
+hot|暑い・熱い|形|S|
+cold|寒い・冷たい|形|S|
+warm|暖かい|形|S|
+cool|涼しい・かっこいい|形|S|
+happy|うれしい・幸せな|形|S|
+sad|悲しい|形|S|
+busy|忙しい|形|S|
+free|自由な・無料の・暇な|形|S|
+easy|簡単な|形|S|
+difficult|難しい|形|S|
+hard|難しい・硬い・熱心に|形・副|S|
+important|重要な・大切な|形|S|
+interesting|おもしろい|形|S|
+funny|おかしい・笑える|形|S|
+beautiful|美しい|形|S|
+famous|有名な|形|S|
+kind|親切な・種類|形・名|S|
+nice|すてきな・良い|形|S|
+fine|元気な・晴れた|形|S|
+great|すばらしい|形|S|
+strong|強い|形|S|
+weak|弱い|形|S|
+fast|速い|形・副|S|
+slow|遅い|形|S|
+early|早い・早く|形・副|S|
+late|遅い・遅く|形・副|S|
+right|正しい・右|形・名|S|
+wrong|まちがった|形|S|
+true|本当の|形|S|
+sure|確かな・きっと|形|S|
+ready|用意ができた|形|S|
+glad|うれしい|形|S|
+sorry|残念な・気の毒な|形|S|
+afraid|恐れて・心配して|形|S|
+different|異なる・いろいろな|形|S|
+same|同じ|形|S|
+many|多くの（数）|形|S|
+much|多くの（量）|形|S|
+some|いくつかの・何人か|形|S|
+any|何か・どれか|形|S|
+all|すべての|形|S|
+every|毎〜・すべての|形|S|
+each|それぞれの|形|S|
+other|ほかの|形|S|
+another|もう一つの・ほかの|形|S|
+first|最初の・1番目の|形|S|
+second|2番目の・秒|形・名|S|
+last|最後の・この前の|形|S|
+next|次の|形|S|
+more|もっと多くの|形|S|
+most|最も多くの|形|S|
+very|とても|副|S|
+so|とても・だから|副|S|
+too|〜も・〜すぎる|副|S|
+also|〜もまた|副|S|
+always|いつも|副|S|
+usually|たいてい|副|S|
+often|よく・しばしば|副|S|
+sometimes|ときどき|副|S|
+never|決して〜ない|副|S|
+now|今|副|S|
+then|そのとき・それから|副|S|
+here|ここに|副|S|
+there|そこに|副|S|
+together|一緒に|副|S|
+again|再び・もう一度|副|S|
+well|よく・上手に|副|S|
+really|本当に|副|S|
+just|ちょうど・たった今|副|S|
+about|〜について・およそ|前・副|S|
+after|〜の後で|前・接|S|
+before|〜の前に|前・接|S|
+between|〜の間に|前|S|
+under|〜の下に|前|S|
+over|〜の上に・〜以上|前|S|
+with|〜と一緒に・〜で|前|S|
+without|〜なしで|前|S|
+for|〜のために・〜の間|前|S|
+from|〜から|前|S|
+to|〜へ・〜に|前|S|
+in|〜の中に|前|S|
+on|〜の上に|前|S|
+at|〜で・〜に|前|S|
+by|〜によって・〜までに|前|S|
+of|〜の|前|S|
+and|そして|接|S|
+but|しかし|接|S|
+or|または|接|S|
+because|なぜなら〜だから|接|S|
+when|いつ・〜のとき|副・接|S|
+where|どこ|副|S|
+what|何|代|S|
+who|誰|代|S|
+which|どちら・どれ|代|S|
+how|どのように・どれほど|副|S|
+why|なぜ|副|S|
+this|これ・この|代・形|S|
+that|あれ・その|代・形|S|
+these|これら|代|S|
+those|あれら|代|S|
+my|私の|代|S|
+your|あなたの|代|S|
+his|彼の|代|S|
+her|彼女の|代|S|
+our|私たちの|代|S|
+their|彼らの|代|S|
+child|子ども|名|A|
+children|子どもたち|名|A|
+baby|赤ちゃん|名|A|
+man|男性・人|名|A|
+woman|女性|名|A|
+boy|少年・男の子|名|A|
+girl|少女・女の子|名|A|
+parent|親|名|A|
+grandfather|祖父|名|A|
+grandmother|祖母|名|A|
+uncle|おじ|名|A|
+aunt|おば|名|A|
+cousin|いとこ|名|A|
+neighbor|近所の人|名|A|
+doctor|医者|名|A|
+nurse|看護師|名|A|
+driver|運転手|名|A|
+farmer|農家|名|A|
+singer|歌手|名|A|
+player|選手・演奏者|名|A|
+artist|芸術家|名|A|
+writer|作家|名|A|
+actor|俳優|名|A|
+actress|女優|名|A|
+police|警察|名|A|
+firefighter|消防士|名|A|
+scientist|科学者|名|A|
+engineer|技術者|名|A|
+king|王|名|A|
+queen|女王|名|A|
+friendship|友情|名|A|
+dream|夢|名|A|
+future|未来|名|A|
+past|過去|名|A|
+present|現在・プレゼント|名|A|
+history|歴史|名|A|
+culture|文化|名|A|
+language|言語・言葉|名|A|
+subject|科目・主題|名|A|
+lesson|授業・レッスン|名|A|
+homework|宿題|名|A|
+test|テスト|名|A|
+exam|試験|名|A|
+grade|学年・成績|名|A|
+dictionary|辞書|名|A|
+notebook|ノート|名|A|
+pencil|鉛筆|名|A|
+pen|ペン|名|A|
+desk|机|名|A|
+chair|いす|名|A|
+board|板・黒板|名|A|
+door|ドア|名|A|
+window|窓|名|A|
+wall|壁|名|A|
+floor|床・階|名|A|
+library|図書館|名|A|
+hospital|病院|名|A|
+station|駅|名|A|
+airport|空港|名|A|
+park|公園|名|A|
+shop|店|名|A|
+store|店|名|A|
+restaurant|レストラン|名|A|
+market|市場|名|A|
+bank|銀行|名|A|
+post office|郵便局|名|A|
+museum|博物館・美術館|名|A|
+zoo|動物園|名|A|
+bridge|橋|名|A|
+street|通り|名|A|
+road|道路|名|A|
+building|建物|名|A|
+office|事務所・会社|名|A|
+kitchen|台所|名|A|
+garden|庭|名|A|
+farm|農場|名|A|
+field|野原・分野|名|A|
+forest|森|名|A|
+beach|浜辺|名|A|
+island|島|名|A|
+lake|湖|名|A|
+hill|丘|名|A|
+cloud|雲|名|A|
+wind|風|名|A|
+star|星|名|A|
+moon|月|名|A|
+earth|地球・大地|名|A|
+animal|動物|名|A|
+horse|馬|名|A|
+cow|牛|名|A|
+pig|豚|名|A|
+sheep|羊|名|A|
+bear|クマ|名|A|
+elephant|ゾウ|名|A|
+lion|ライオン|名|A|
+tiger|トラ|名|A|
+monkey|サル|名|A|
+rabbit|ウサギ|名|A|
+mouse|ネズミ|名|A|
+snake|ヘビ|名|A|
+egg|卵|名|A|
+milk|牛乳|名|A|
+rice|米・ご飯|名|A|
+bread|パン|名|A|
+meat|肉|名|A|
+fruit|果物|名|A|
+apple|りんご|名|A|
+orange|オレンジ|名|A|
+banana|バナナ|名|A|
+vegetable|野菜|名|A|
+breakfast|朝食|名|A|
+lunch|昼食|名|A|
+dinner|夕食|名|A|
+tea|お茶|名|A|
+coffee|コーヒー|名|A|
+juice|ジュース|名|A|
+cake|ケーキ|名|A|
+bus|バス|名|A|
+train|電車|名|A|
+car|車|名|A|
+bike|自転車|名|A|
+bicycle|自転車|名|A|
+plane|飛行機|名|A|
+ship|船|名|A|
+boat|ボート・小舟|名|A|
+ticket|切符|名|A|
+trip|旅行|名|A|
+vacation|休暇|名|A|
+holiday|休日|名|A|
+birthday|誕生日|名|A|
+party|パーティー|名|A|
+festival|祭り|名|A|
+concert|コンサート|名|A|
+soccer|サッカー|名|A|
+baseball|野球|名|A|
+tennis|テニス|名|A|
+basketball|バスケットボール|名|A|
+volleyball|バレーボール|名|A|
+table tennis|卓球|名|A|
+piano|ピアノ|名|A|
+guitar|ギター|名|A|
+violin|バイオリン|名|A|
+computer|コンピュータ|名|A|
+phone|電話|名|A|
+television|テレビ|名|A|
+TV|テレビ|名|A|
+radio|ラジオ|名|A|
+camera|カメラ|名|A|
+clock|時計（置き・掛け）|名|A|
+bag|かばん|名|A|
+key|鍵・キー|名|A|
+box|箱|名|A|
+cup|カップ|名|A|
+glass|ガラス・コップ|名|A|
+shirt|シャツ|名|A|
+hat|帽子|名|A|
+shoes|靴|名|A|
+color|色|名|A|
+red|赤|名・形|A|
+blue|青|名・形|A|
+green|緑|名・形|A|
+yellow|黄色|名・形|A|
+white|白|名・形|A|
+black|黒|名・形|A|
+brown|茶色|名・形|A|
+pink|ピンク|名・形|A|
+Monday|月曜日|名|A|
+Tuesday|火曜日|名|A|
+Wednesday|水曜日|名|A|
+Thursday|木曜日|名|A|
+Friday|金曜日|名|A|
+Saturday|土曜日|名|A|
+Sunday|日曜日|名|A|
+January|1月|名|A|
+February|2月|名|A|
+March|3月|名|A|
+April|4月|名|A|
+May|5月|名|A|
+June|6月|名|A|
+July|7月|名|A|
+August|8月|名|A|
+September|9月|名|A|
+October|10月|名|A|
+November|11月|名|A|
+December|12月|名|A|
+one|1|数|A|
+two|2|数|A|
+three|3|数|A|
+four|4|数|A|
+five|5|数|A|
+six|6|数|A|
+seven|7|数|A|
+eight|8|数|A|
+nine|9|数|A|
+ten|10|数|A|
+eleven|11|数|A|
+twelve|12|数|A|
+thirteen|13|数|A|
+twenty|20|数|A|
+thirty|30|数|A|
+hundred|100|数|A|
+thousand|1,000|数|A|
+accept|受け入れる|動|A|
+add|加える|動|A|
+agree|同意する|動|A|
+allow|許す|動|A|
+appear|現れる・〜に見える|動|A|
+belong|属する|動|A|
+break|壊す・折る|動|A|
+build|建てる・作る|動|A|
+carry|運ぶ・持っていく|動|A|
+catch|捕まえる・受ける|動|A|
+clean|掃除する・きれいな|動・形|A|
+climb|登る|動|A|
+collect|集める|動|A|
+continue|続ける・続く|動|A|
+cry|泣く・叫ぶ|動|A|
+cut|切る|動|A|
+dance|踊る|動|A|
+die|死ぬ|動|A|
+discover|発見する|動|A|
+draw|描く・引く|動|A|
+drive|運転する|動|A|
+drop|落とす・下がる|動|A|
+enter|入る|動|A|
+excuse|許す・言い訳|動・名|A|
+exercise|運動する・練習|動・名|A|
+explain|説明する|動|A|
+feed|えさを与える|動|A|
+fight|戦う|動|A|
+follow|従う・ついていく|動|A|
+happen|起こる|動|A|
+hate|嫌う|動|A|
+hit|打つ・当たる|動|A|
+hold|持つ・開催する|動|A|
+hurry|急ぐ|動|A|
+imagine|想像する|動|A|
+improve|改善する・上達する|動|A|
+include|含む|動|A|
+introduce|紹介する・導入する|動|A|
+invite|招待する|動|A|
+join|参加する・加わる|動|A|
+jump|跳ぶ|動|A|
+kick|ける|動|A|
+kill|殺す|動|A|
+laugh|笑う|動|A|
+lie|横になる・うそをつく|動|A|
+lose|失う・負ける|動|A|
+marry|結婚する|動|A|
+mean|意味する|動|A|
+miss|逃す・恋しく思う|動|A|
+pay|支払う|動|A|
+pick|選ぶ・摘む|動|A|
+plan|計画する・計画|動・名|A|
+practice|練習する・練習|動・名|A|
+prepare|準備する|動|A|
+promise|約束する・約束|動・名|A|
+push|押す|動|A|
+pull|引く|動|A|
+raise|上げる・育てる|動|A|
+reach|到着する・届く|動|A|
+realize|気づく・実現する|動|A|
+relax|くつろぐ|動|A|
+repair|修理する|動|A|
+repeat|繰り返す|動|A|
+report|報告する・レポート|動・名|A|
+ride|乗る|動|A|
+ring|鳴る・指輪|動・名|A|
+rise|上がる|動|A|
+save|救う・節約する・貯める|動|A|
+search|探す・検索する|動|A|
+seem|〜のように見える|動|A|
+serve|仕える・出す（食事）|動|A|
+share|共有する・分ける|動|A|
+smile|ほほえむ・笑顔|動・名|A|
+solve|解く・解決する|動|A|
+spend|費やす・過ごす|動|A|
+surprise|驚かす・驚き|動・名|A|
+throw|投げる|動|A|
+touch|触れる|動|A|
+translate|翻訳する|動|A|
+wake|目覚める・起こす|動|A|
+wash|洗う|動|A|
+wear|着ている・身につける|動|A|
+win|勝つ|動|A|
+worry|心配する|動|A|
+wonder|〜かと思う・不思議に思う|動|A|
+able|できる・有能な|形|A|
+active|活発な|形|A|
+angry|怒った|形|A|
+careful|注意深い|形|A|
+careless|不注意な|形|A|
+clear|明らかな・晴れた|形|A|
+common|普通の・共通の|形|A|
+correct|正しい|形|A|
+cute|かわいい|形|A|
+dangerous|危険な|形|A|
+dark|暗い|形|A|
+deep|深い|形|A|
+delicious|おいしい|形|A|
+exciting|わくわくさせる|形|A|
+excited|わくわくした|形|A|
+favorite|お気に入りの|形|A|
+foreign|外国の|形|A|
+fresh|新鮮な|形|A|
+full|満ちた・満腹の|形|A|
+healthy|健康な|形|A|
+heavy|重い|形|A|
+hungry|空腹の|形|A|
+ill|病気の|形|A|
+lucky|運の良い|形|A|
+natural|自然の|形|A|
+necessary|必要な|形|A|
+nervous|緊張した|形|A|
+popular|人気のある|形|A|
+poor|貧しい・かわいそうな|形|A|
+pretty|かわいい・かなり|形・副|A|
+proud|誇りに思う|形|A|
+quiet|静かな|形|A|
+rich|豊かな・金持ちの|形|A|
+safe|安全な|形|A|
+shy|恥ずかしがりの|形|A|
+sick|病気の|形|A|
+sleepy|眠い|形|A|
+smart|賢い・利口な|形|A|
+special|特別な|形|A|
+strange|奇妙な|形|A|
+sunny|晴れた|形|A|
+cloudy|曇った|形|A|
+rainy|雨の|形|A|
+snowy|雪の|形|A|
+windy|風の強い|形|A|
+tall|背が高い|形|A|
+thick|厚い・濃い|形|A|
+thin|薄い・細い|形|A|
+thirsty|のどが渇いた|形|A|
+tired|疲れた|形|A|
+useful|役に立つ|形|A|
+wonderful|すばらしい|形|A|
+already|すでに|副|A|
+especially|特に|副|A|
+ever|今までに|副|A|
+far|遠く・はるかに|副|A|
+later|後で|副|A|
+maybe|たぶん|副|A|
+nearly|ほとんど|副|A|
+once|一度・かつて|副|A|
+quite|かなり・まったく|副|A|
+rather|むしろ・かなり|副|A|
+soon|すぐに・まもなく|副|A|
+still|まだ・それでも|副|A|
+twice|2回|副|A|
+yet|まだ（〜ない）|副|A|
+ago|〜前に|副|A|
+almost|ほとんど|副|A|
+around|〜の周りに・およそ|前・副|A|
+during|〜の間（期間）|前|A|
+since|〜以来・〜だから|前・接|A|
+until|〜まで|前・接|A|
+through|〜を通して|前|A|
+against|〜に反対して|前|A|
+among|〜の間で（3つ以上）|前|A|
+behind|〜の後ろに|前|A|
+beside|〜のそばに|前|A|
+inside|〜の中に|前|A|
+outside|〜の外に|前|A|
+across|〜を横切って|前|A|
+along|〜に沿って|前|A|
+ability|能力|名|B|
+accident|事故|名|B|
+action|行動・動作|名|B|
+activity|活動|名|B|
+address|住所・演説|名|B|
+advice|助言|名|B|
+age|年齢・時代|名|B|
+air|空気|名|B|
+airplane|飛行機|名|B|
+album|アルバム|名|B|
+alphabet|アルファベット|名|B|
+amount|量・額|名|B|
+anger|怒り|名|B|
+angle|角度|名|B|
+apology|謝罪|名|B|
+area|地域・面積|名|B|
+arm|腕|名|B|
+army|軍隊|名|B|
+art|芸術・美術|名|B|
+article|記事・品物|名|B|
+asia|アジア|名|B|
+athlete|運動選手|名|B|
+audience|聴衆・観客|名|B|
+author|著者|名|B|
+autumn|秋|名|B|
+avenue|大通り|名|B|
+average|平均|名・形|B|
+award|賞|名|B|
+background|背景・経歴|名|B|
+ball|ボール・舞踏会|名|B|
+band|バンド・帯|名|B|
+bar|棒・酒場|名|B|
+base|基礎・基地・塁|名|B|
+basket|かご|名|B|
+bath|入浴|名|B|
+battery|電池|名|B|
+battle|戦い|名|B|
+bay|湾|名|B|
+bean|豆|名|B|
+beauty|美しさ|名|B|
+bed|ベッド|名|B|
+bee|ハチ|名|B|
+beef|牛肉|名|B|
+beer|ビール|名|B|
+bell|ベル・鐘|名|B|
+belt|ベルト・帯|名|B|
+bench|ベンチ|名|B|
+berry|ベリー・木の実|名|B|
+bill|請求書・紙幣|名|B|
+biology|生物学|名|B|
+birth|誕生|名|B|
+bit|少し・小片|名|B|
+blade|刃|名|B|
+blanket|毛布|名|B|
+block|ブロック・街区|名|B|
+blood|血|名|B|
+blow|打撃・吹くこと|名|B|
+bomb|爆弾|名|B|
+bone|骨|名|B|
+bonus|ボーナス|名|B|
+border|国境・境界|名|B|
+boss|上司|名|B|
+bottle|びん|名|B|
+bottom|底・一番下|名|B|
+bowl|椀・ボウル|名|B|
+brain|脳|名|B|
+branch|枝・支店|名|B|
+brand|銘柄・ブランド|名|B|
+brick|れんが|名|B|
+bride|花嫁|名|B|
+brochure|パンフレット|名|B|
+brush|ブラシ・はけ|名|B|
+bubble|泡|名|B|
+bucket|バケツ|名|B|
+budget|予算|名|B|
+bug|虫・バグ|名|B|
+business|仕事・商業|名|B|
+butter|バター|名|B|
+button|ボタン|名|B|
+cabin|小屋・船室|名|B|
+cable|ケーブル|名|B|
+cage|かご・おり|名|B|
+calendar|カレンダー|名|B|
+camp|キャンプ|名|B|
+canal|運河|名|B|
+cancer|がん|名|B|
+candle|ろうそく|名|B|
+candy|キャンディー|名|B|
+canvas|画布・キャンバス|名|B|
+cap|帽子（つば付き）|名|B|
+capital|首都・大文字・資本|名|B|
+captain|船長・主将|名|B|
+card|カード|名|B|
+care|世話・注意|名|B|
+carpet|じゅうたん|名|B|
+carrot|ニンジン|名|B|
+cartoon|漫画・アニメ|名|B|
+case|場合・ケース・事件|名|B|
+cash|現金|名|B|
+castle|城|名|B|
+catalog|カタログ|名|B|
+cause|原因・大義|名|B|
+ceiling|天井|名|B|
+cell|細胞・電池|名|B|
+century|世紀・100年|名|B|
+ceremony|式典|名|B|
+chain|鎖・チェーン|名|B|
+chairman|議長|名|B|
+chalk|チョーク|名|B|
+champion|優勝者|名|B|
+chance|機会・可能性|名|B|
+channel|チャンネル・海峡|名|B|
+chapter|章|名|B|
+character|性格・登場人物・文字|名|B|
+charge|料金・責任・告発|名|B|
+chart|図表|名|B|
+cheese|チーズ|名|B|
+chef|シェフ|名|B|
+chemistry|化学|名|B|
+cherry|さくらんぼ・桜|名|B|
+chest|胸・箱|名|B|
+chicken|鶏・鶏肉|名|B|
+chief|長・主な|名・形|B|
+chimney|煙突|名|B|
+chin|あご|名|B|
+chocolate|チョコレート|名|B|
+choice|選択・選ぶこと|名|B|
+church|教会|名|B|
+cigarette|たばこ|名|B|
+circle|円・輪|名|B|
+citizen|市民|名|B|
+claim|主張・要求|名|B|
+classmate|クラスメート|名|B|
+classroom|教室|名|B|
+clay|粘土|名|B|
+climate|気候|名|B|
+clinic|診療所|名|B|
+cloth|布|名|B|
+clue|手がかり|名|B|
+coach|コーチ・指導者|名|B|
+coal|石炭|名|B|
+coast|海岸|名|B|
+coat|コート・上着|名|B|
+code|コード・規則|名|B|
+coin|硬貨|名|B|
+college|大学・短期大学|名|B|
+colony|植民地|名|B|
+column|柱・コラム|名|B|
+comfort|快適さ・慰め|名|B|
+comic|漫画|名|B|
+command|命令・指揮|名|B|
+comment|コメント・意見|名|B|
+commerce|商業|名|B|
+committee|委員会|名|B|
+company|会社・仲間|名|B|
+comparison|比較|名|B|
+complaint|苦情・不満|名|B|
+compound|化合物・合成語|名|B|
+concept|概念|名|B|
+concern|関心・心配|名|B|
+conflict|対立・紛争|名|B|
+contact|接触・連絡|名|B|
+content|内容・満足|名|B|
+contest|コンテスト・競争|名|B|
+continent|大陸|名|B|
+contract|契約|名|B|
+control|支配・管理|名|B|
+copy|コピー・写し|名|B|
+corn|トウモロコシ|名|B|
+cost|費用|名|B|
+cotton|綿・木綿|名|B|
+couch|ソファー|名|B|
+cough|せき|名|B|
+council|議会・会議|名|B|
+count|数・伯爵|名|B|
+courage|勇気|名|B|
+course|進路・コース・科目|名|B|
+court|法廷・コート|名|B|
+cover|カバー・表紙|名|B|
+crack|ひび・裂け目|名|B|
+craft|工芸・技術|名|B|
+crash|衝突・墜落|名|B|
+cream|クリーム|名|B|
+creation|創造・作品|名|B|
+creature|生き物|名|B|
+credit|信用・クレジット|名|B|
+crew|乗組員|名|B|
+crime|犯罪|名|B|
+crisis|危機|名|B|
+critic|批評家|名|B|
+crop|作物|名|B|
+cross|十字架・横切ること|名|B|
+crowd|群衆|名|B|
+crown|王冠|名|B|
+cure|治療・治癒|名|B|
+curtain|カーテン|名|B|
+curve|曲線|名|B|
+custom|習慣・税関|名|B|
+cycle|周期・サイクル|名|B|
+damage|損害|名|B|
+danger|危険|名|B|
+darkness|暗闇|名|B|
+data|データ|名|B|
+date|日付・デート|名|B|
+daughter|娘|名|B|
+dawn|夜明け|名|B|
+deadline|締め切り|名|B|
+deal|取引・扱い|名|B|
+death|死|名|B|
+debate|討論|名|B|
+debt|借金|名|B|
+decade|10年間|名|B|
+decision|決定|名|B|
+deck|甲板・デッキ|名|B|
+deer|シカ|名|B|
+defeat|敗北|名|B|
+defense|防御・弁護|名|B|
+degree|程度・学位・度|名|B|
+delay|遅れ|名|B|
+delivery|配達|名|B|
+demand|需要・要求|名|B|
+democracy|民主主義|名|B|
+dentist|歯科医|名|B|
+departure|出発|名|B|
+deposit|預金・保証金|名|B|
+depth|深さ|名|B|
+desert|砂漠|名|B|
+design|デザイン・設計|名|B|
+desire|願望|名|B|
+detail|詳細|名|B|
+device|装置・デバイス|名|B|
+diagram|図・ダイアグラム|名|B|
+dialogue|対話|名|B|
+diamond|ダイヤモンド|名|B|
+diary|日記|名|B|
+diet|食事・ダイエット|名|B|
+difficulty|困難|名|B|
+dirt|汚れ・土|名|B|
+disaster|災害|名|B|
+discovery|発見|名|B|
+disease|病気|名|B|
+dish|皿・料理|名|B|
+distance|距離|名|B|
+district|地区|名|B|
+division|分割・部門|名|B|
+document|文書|名|B|
+dollar|ドル|名|B|
+dolphin|イルカ|名|B|
+domain|領域・ドメイン|名|B|
+donation|寄付|名|B|
+dot|点|名|B|
+double|2倍|名・形|B|
+doubt|疑い|名|B|
+doughnut|ドーナツ|名|B|
+downtown|繁華街・中心街|名|B|
+dozen|ダース（12個）|名|B|
+draft|草稿・下書き|名|B|
+dragon|ドラゴン・竜|名|B|
+drama|ドラマ・劇|名|B|
+dress|ドレス・服装|名|B|
+drift|漂流|名|B|
+drill|ドリル・訓練|名|B|
+drug|薬・麻薬|名|B|
+drum|太鼓・ドラム|名|B|
+duck|アヒル・カモ|名|B|
+dust|ほこり|名|B|
+duty|義務・税|名|B|
+eagle|ワシ|名|B|
+ear|耳|名|B|
+earthquake|地震|名|B|
+ease|容易さ・安楽|名|B|
+east|東|名|B|
+echo|反響・エコー|名|B|
+economy|経済|名|B|
+edge|端・縁|名|B|
+edition|版|名|B|
+effect|効果・影響|名|B|
+effort|努力|名|B|
+election|選挙|名|B|
+element|要素・元素|名|B|
+elevator|エレベーター|名|B|
+emergency|緊急事態|名|B|
+emotion|感情|名|B|
+emphasis|強調|名|B|
+empire|帝国|名|B|
+employee|従業員|名|B|
+end|終わり・端|名|B|
+enemy|敵|名|B|
+energy|エネルギー|名|B|
+engine|エンジン|名|B|
+entrance|入口・入学|名|B|
+entry|入場・記入|名|B|
+envelope|封筒|名|B|
+episode|エピソード|名|B|
+equality|平等|名|B|
+error|誤り|名|B|
+escape|逃亡|名|B|
+essay|エッセイ・作文|名|B|
+essential|本質・必需品|名|B|
+estate|不動産・財産|名|B|
+event|出来事・イベント|名|B|
+evidence|証拠|名|B|
+evil|悪|名|B|
+example|例|名|B|
+exchange|交換・両替|名|B|
+executive|重役・実行の|名・形|B|
+exit|出口|名|B|
+expense|費用・出費|名|B|
+expert|専門家|名|B|
+export|輸出|名|B|
+extent|程度・範囲|名|B|
+extra|余分なもの|名|B|
+face|顔|名|B|
+facility|施設・設備|名|B|
+fact|事実|名|B|
+factory|工場|名|B|
+failure|失敗|名|B|
+fairness|公平さ|名|B|
+faith|信頼・信仰|名|B|
+fame|名声|名|B|
+fan|ファン・扇風機|名|B|
+fancy|空想・装飾|名|B|
+fare|運賃|名|B|
+fashion|流行・ファッション|名|B|
+fate|運命|名|B|
+fault|欠点・過失|名|B|
+favor|好意・親切|名|B|
+fear|恐れ|名|B|
+feather|羽|名|B|
+feature|特徴|名|B|
+fee|料金|名|B|
+fellow|仲間・やつ|名|B|
+female|女性・雌|名|B|
+fence|柵・フェンス|名|B|
+fever|熱|名|B|
+fiction|フィクション・小説|名|B|
+figure|姿・数字・人物|名|B|
+file|ファイル|名|B|
+film|映画・フィルム|名|B|
+final|決勝・最終|名|B|
+finance|財政・金融|名|B|
+finger|指|名|B|
+fire|火・火事|名|B|
+firm|会社・堅い|名・形|B|
+flag|旗|名|B|
+flame|炎|名|B|
+flash|閃光・フラッシュ|名|B|
+flavor|味・風味|名|B|
+flight|飛行・フライト|名|B|
+float|浮くこと|名|B|
+flood|洪水|名|B|
+flour|小麦粉|名|B|
+flow|流れ|名|B|
+focus|焦点・集中|名|B|
+fog|霧|名|B|
+foot|足・フィート|名|B|
+football|フットボール|名|B|
+force|力・武力|名|B|
+fork|フォーク・分岐|名|B|
+form|形・用紙|名|B|
+forum|フォーラム・討論会|名|B|
+fox|キツネ|名|B|
+frame|枠・フレーム|名|B|
+framework|枠組み|名|B|
+freedom|自由|名|B|
+freeze|凍結|名|B|
+frequency|頻度|名|B|
+frog|カエル|名|B|
+front|前・正面|名|B|
+frost|霜|名|B|
+fuel|燃料|名|B|
+fun|楽しみ|名|B|
+function|機能・働き|名|B|
+fund|基金・資金|名|B|
+funeral|葬式|名|B|
+fur|毛皮|名|B|
+furniture|家具|名|B|
+gain|利益・増加|名|B|
+gallery|画廊・ギャラリー|名|B|
+gap|隙間・ギャップ|名|B|
+garage|ガレージ|名|B|
+garbage|ごみ|名|B|
+gas|ガス・ガソリン|名|B|
+gate|門・ゲート|名|B|
+gathering|集まり|名|B|
+gear|ギア・装備|名|B|
+gender|性別|名|B|
+gene|遺伝子|名|B|
+general|将軍・一般|名|B|
+genius|天才|名|B|
+genre|ジャンル|名|B|
+gentleman|紳士|名|B|
+geography|地理|名|B|
+gesture|身振り|名|B|
+ghost|幽霊|名|B|
+giant|巨人|名・形|B|
+gift|贈り物・才能|名|B|
+glance|一瞥|名|B|
+globe|地球・地球儀|名|B|
+glory|栄光|名|B|
+glove|手袋|名|B|
+goal|目標・ゴール|名|B|
+goat|ヤギ|名|B|
+god|神|名|B|
+gold|金|名|B|
+golf|ゴルフ|名|B|
+goodness|善良さ|名|B|
+governor|知事・総督|名|B|
+grain|穀物・粒|名|B|
+grant|助成金・許可|名|B|
+grape|ブドウ|名|B|
+graph|グラフ|名|B|
+grass|草・芝生|名|B|
+gravity|重力|名|B|
+greeting|挨拶|名|B|
+ground|地面|名|B|
+group|グループ・集団|名|B|
+growth|成長|名|B|
+guarantee|保証|名|B|
+guard|警備員・守衛|名|B|
+guess|推測|名|B|
+guest|客・ゲスト|名|B|
+guidance|指導・ガイダンス|名|B|
+guide|ガイド・案内人|名|B|
+gun|銃|名|B|
+gym|体育館・ジム|名|B|
+habit|習慣|名|B|
+hair|髪・毛|名|B|
+half|半分|名|B|
+hall|ホール・広間|名|B|
+hammer|ハンマー|名|B|
+handle|取っ手・ハンドル|名|B|
+harbor|港|名|B|
+hardware|金物・ハードウェア|名|B|
+harm|害・危害|名|B|
+harmony|調和|名|B|
+harvest|収穫|名|B|
+headline|見出し|名|B|
+health|健康|名|B|
+heart|心臓・心|名|B|
+heat|熱|名|B|
+height|高さ・身長|名|B|
+helicopter|ヘリコプター|名|B|
+hen|雌鶏|名|B|
+hero|英雄|名|B|
+hint|ヒント|名|B|
+hobby|趣味|名|B|
+hole|穴|名|B|
+honesty|正直さ|名|B|
+honey|蜂蜜|名|B|
+honor|名誉|名|B|
+horizon|地平線・水平線|名|B|
+host|主催者・ホスト|名|B|
+hotel|ホテル|名|B|
+hour|時間・1時間|名|B|
+household|世帯・家庭|名|B|
+housewife|主婦|名|B|
+human|人間|名|B|
+humor|ユーモア|名|B|
+hunger|空腹・飢え|名|B|
+hunt|狩り|名|B|
+hurricane|ハリケーン|名|B|
+hurt|傷・痛み|名|B|
+husband|夫|名|B|
+ice|氷|名|B|
+icon|アイコン|名|B|
+idea|考え・アイデア|名|B|
+ideal|理想|名|B|
+identity|身元・アイデンティティ|名|B|
+illness|病気|名|B|
+image|画像・イメージ|名|B|
+immigrant|移民|名|B|
+impact|影響・衝撃|名|B|
+incident|出来事・事件|名|B|
+income|収入|名|B|
+increase|増加|名|B|
+index|索引・指標|名|B|
+individual|個人|名|B|
+industry|産業・工業|名|B|
+infant|幼児|名|B|
+ingredient|材料・成分|名|B|
+initial|頭文字|名|B|
+initiative|主導権・構想|名|B|
+injury|けが|名|B|
+input|入力・インプット|名|B|
+inquiry|問い合わせ・調査|名|B|
+insect|昆虫|名|B|
+insight|洞察|名|B|
+interest|興味・利子|名|B|
+internet|インターネット|名|B|
+interview|インタビュー・面接|名|B|
+iron|鉄・アイロン|名|B|
+issue|問題・発行|名|B|
+item|項目・品目|名|B|
+jacket|ジャケット|名|B|
+jail|刑務所|名|B|
+jazz|ジャズ|名|B|
+jeans|ジーンズ|名|B|
+jet|ジェット機|名|B|
+jewel|宝石|名|B|
+job|仕事|名|B|
+joint|関節・共同|名|B|
+joke|冗談|名|B|
+journal|日誌・専門誌|名|B|
+journey|旅|名|B|
+joy|喜び|名|B|
+judge|裁判官・審査員|名|B|
+judgment|判断・判決|名|B|
+jungle|ジャングル|名|B|
+junior|年下・後輩|名|B|
+justice|正義・司法|名|B|
+kid|子ども|名|B|
+kindness|親切さ|名|B|
+kiss|キス|名|B|
+knee|膝|名|B|
+knife|ナイフ|名|B|
+knock|ノック|名|B|
+knowledge|知識|名|B|
+label|ラベル・レッテル|名|B|
+labor|労働|名|B|
+laboratory|実験室|名|B|
+ladder|はしご|名|B|
+lady|女性・婦人|名|B|
+lamp|ランプ|名|B|
+land|土地・陸|名|B|
+landscape|景色・風景|名|B|
+laptop|ノートパソコン|名|B|
+law|法律・法則|名|B|
+lawyer|弁護士|名|B|
+layout|レイアウト|名|B|
+leader|リーダー・指導者|名|B|
+leaf|葉|名|B|
+league|リーグ・連盟|名|B|
+lecture|講義|名|B|
+left|左|名|B|
+leg|脚|名|B|
+legal|法的な|形|B|
+legend|伝説|名|B|
+leisure|余暇・レジャー|名|B|
+lemon|レモン|名|B|
+length|長さ|名|B|
+lens|レンズ|名|B|
+level|レベル・水準|名|B|
+license|免許|名|B|
+lifestyle|生活様式|名|B|
+lifetime|生涯|名|B|
+lift|エレベーター・リフト|名|B|
+light|光・明かり|名|B|
+lightning|雷・稲妻|名|B|
+limit|限界・制限|名|B|
+line|線・行列|名|B|
+link|つながり・リンク|名|B|
+lip|唇|名|B|
+liquid|液体|名|B|
+list|リスト・一覧|名|B|
+literature|文学|名|B|
+litter|ごみ|名|B|
+load|荷物・負荷|名|B|
+loan|ローン・貸付|名|B|
+local|地元の|形|B|
+location|場所・位置|名|B|
+lock|鍵・錠|名|B|
+log|丸太・記録|名|B|
+logic|論理|名|B|
+loose|ゆるい|形|B|
+lot|たくさん・くじ|名|B|
+loud|大きな声の|形|B|
+luck|運|名|B|
+luggage|荷物|名|B|
+luxury|贅沢・高級品|名|B|
+machine|機械|名|B|
+magazine|雑誌|名|B|
+magic|魔法|名|B|
+magnet|磁石|名|B|
+mail|郵便・メール|名|B|
+main|主な|形|B|
+major|主要な・専攻|形・名|B|
+makeup|化粧|名|B|
+male|男性・雄|名|B|
+mall|ショッピングモール|名|B|
+manager|マネージャー・支配人|名|B|
+manual|マニュアル・手動|名|B|
+map|地図|名|B|
+marathon|マラソン|名|B|
+mark|印・点数|名|B|
+marriage|結婚|名|B|
+mask|マスク・仮面|名|B|
+mass|大衆・質量|名|B|
+match|試合・マッチ|名|B|
+mate|仲間|名|B|
+material|材料・素材|名|B|
+matter|問題・物質|名|B|
+maximum|最大|名|B|
+meal|食事|名|B|
+media|メディア|名|B|
+medicine|薬・医学|名|B|
+member|メンバー・会員|名|B|
+memory|記憶・思い出|名|B|
+menu|メニュー|名|B|
+message|メッセージ・伝言|名|B|
+method|方法|名|B|
+middle|真ん中|名|B|
+midnight|真夜中|名|B|
+might|力・〜かもしれない|名・助|B|
+mile|マイル|名|B|
+mill|製粉所・工場|名|B|
+million|100万|数|B|
+mind|心・精神|名|B|
+mine|鉱山・私のもの|名|B|
+minimum|最小|名|B|
+minority|少数派|名|B|
+minute|分・瞬間|名|B|
+mistake|間違い|名|B|
+mix|混合|名|B|
+model|モデル・模型|名|B|
+modern|現代の・近代的な|形|B|
+moment|瞬間・ひととき|名|B|
+mood|気分・機嫌|名|B|
+mouth|口|名|B|
+must|〜しなければならない|助|B|
+nation|国家・国民|名|B|
+national|国の・国民の|形|B|
+nature|自然|名|B|
+near|近い|形|B|
+newspaper|新聞|名|B|
+north|北|名|B|
+nose|鼻|名|B|
+note|メモ・音符|名|B|
+nothing|何も〜ない|代|B|
+notice|通知・注意|名|B|
+number|数・番号|名|B|
+oak|オーク・樫|名|B|
+object|物・目的|名|B|
+observer|観察者|名|B|
+obstacle|障害|名|B|
+occasion|場合・機会|名|B|
+ocean|大洋・海|名|B|
+odd|奇妙な・奇数の|形|B|
+odor|におい|名|B|
+offense|違反・攻撃|名|B|
+offer|申し出・提供|名|B|
+official|公式の・職員|形・名|B|
+oil|油・石油|名|B|
+olympic|オリンピックの|形|B|
+onion|玉ねぎ|名|B|
+operator|オペレーター|名|B|
+opinion|意見|名|B|
+opponent|対戦相手・反対者|名|B|
+opposite|反対の|形|B|
+option|選択肢|名|B|
+orbit|軌道|名|B|
+orchestra|オーケストラ|名|B|
+order|順序・注文・命令|名|B|
+ordinary|普通の|形|B|
+organ|器官・オルガン|名|B|
+organic|有機の|形|B|
+origin|起源|名|B|
+original|元の・独創的な|形|B|
+otherwise|そうでなければ|副|B|
+ought|〜すべきである|助|B|
+ounce|オンス|名|B|
+outcome|結果|名|B|
+outdoor|屋外の|形|B|
+outer|外側の|形|B|
+outfit|服装・装備|名|B|
+outline|概要・輪郭|名|B|
+output|出力・生産|名|B|
+oven|オーブン|名|B|
+overall|全体の|形|B|
+overcome|克服する|動|B|
+overnight|一晩中|副|B|
+overseas|海外へ・海外の|副・形|B|
+owe|借りがある|動|B|
+own|自分の|形|B|
+oxygen|酸素|名|B|
+pace|ペース・歩調|名|B|
+pacific|太平洋の・平和な|形|B|
+pack|パック・荷物|名|B|
+package|小包・パッケージ|名|B|
+packet|小包|名|B|
+pact|協定|名|B|
+page|ページ|名|B|
+pain|痛み|名|B|
+paint|ペンキ・絵の具|名|B|
+pair|1組・ペア|名|B|
+pal|友達|名|B|
+palace|宮殿|名|B|
+pale|青白い|形|B|
+palm|手のひら・ヤシ|名|B|
+pan|フライパン|名|B|
+panda|パンダ|名|B|
+panel|パネル|名|B|
+panic|パニック|名|B|
+paper|紙・新聞|名|B|
+parade|パレード|名|B|
+paragraph|段落|名|B|
+parallel|平行の|形|B|
+parcel|小包|名|B|
+pardon|許し|名|B|
+part|部分・役割|名|B|
+particular|特定の・特別な|形|B|
+partner|パートナー|名|B|
+pass|パス・合格|名|B|
+passage|通路・一節|名|B|
+passenger|乗客|名|B|
+passion|情熱|名|B|
+passport|パスポート|名|B|
+paste|のり・ペースト|名|B|
+pastime|気晴らし・娯楽|名|B|
+patch|当て布・パッチ|名|B|
+path|小道・進路|名|B|
+patience|忍耐|名|B|
+patient|患者・忍耐強い|名・形|B|
+pattern|模様・パターン|名|B|
+pause|一時停止|名|B|
+pavement|舗道|名|B|
+paw|動物の足|名|B|
+payment|支払い|名|B|
+peace|平和|名|B|
+peach|桃|名|B|
+peak|頂上・ピーク|名|B|
+peanut|ピーナッツ|名|B|
+pear|梨|名|B|
+pearl|真珠|名|B|
+pedestrian|歩行者|名|B|
+penalty|罰金・ペナルティ|名|B|
+pepper|コショウ・ピーマン|名|B|
+per|〜につき・〜ごとに|前|B|
+percent|パーセント|名|B|
+perfect|完璧な|形|B|
+performer|出演者|名|B|
+perhaps|たぶん|副|B|
+period|期間・時代|名|B|
+permanent|永久の|形|B|
+permit|許可証|名|B|
+personal|個人の|形|B|
+pet|ペット|名|B|
+petrol|ガソリン（英）|名|B|
+phase|段階・局面|名|B|
+philosophy|哲学|名|B|
+photo|写真|名|B|
+photograph|写真|名|B|
+phrase|句・フレーズ|名|B|
+physical|身体の・物理的な|形|B|
+physician|医師|名|B|
+physics|物理学|名|B|
+pianist|ピアニスト|名|B|
+picnic|ピクニック|名|B|
+pie|パイ|名|B|
+piece|1つ・1片|名|B|
+pigeon|ハト|名|B|
+plain|明白な・平野|形・名|B|
+planet|惑星|名|B|
+plant|植物・工場|名|B|
+plastic|プラスチック|名|B|
+plate|皿|名|B|
+platform|プラットフォーム・ホーム|名|B|
+pleasant|楽しい・心地よい|形|B|
+please|お願いします|副|B|
+pleasure|喜び・楽しみ|名|B|
+plenty|たくさん・豊富|名|B|
+plot|あらすじ・陰謀|名|B|
+plus|プラス|名|B|
+pocket|ポケット|名|B|
+poem|詩|名|B|
+poet|詩人|名|B|
+poetry|詩・詩歌|名|B|
+point|点・要点|名|B|
+poison|毒|名|B|
+pole|棒・極|名|B|
+policeman|警察官|名|B|
+policy|政策・方針|名|B|
+polish|磨き|名|B|
+polite|礼儀正しい|形|B|
+political|政治的な|形|B|
+politician|政治家|名|B|
+politics|政治|名|B|
+poll|世論調査・投票|名|B|
+pond|池|名|B|
+pool|プール・水たまり|名|B|
+pop|ポップ・人気の|名|B|
+pork|豚肉|名|B|
+port|港|名|B|
+portable|携帯用の|形|B|
+portion|部分・1人前|名|B|
+portrait|肖像画|名|B|
+position|位置・立場|名|B|
+positive|肯定的な・陽性|形|B|
+possible|可能な|形|B|
+post|郵便・ポスト|名|B|
+pot|鍋・ポット|名|B|
+potato|ジャガイモ|名|B|
+potential|可能性・潜在力|名|B|
+pound|ポンド|名|B|
+pour|注ぐこと|名|B|
+poverty|貧困|名|B|
+powder|粉|名|B|
+power|力・権力|名|B|
+powerful|強力な|形|B|
+practical|実用的な|形|B|
+praise|賞賛|名|B|
+prayer|祈り|名|B|
+precious|貴重な|形|B|
+precise|正確な|形|B|
+pregnant|妊娠した|形|B|
+prejudice|偏見|名|B|
+premier|首相|名|B|
+premise|前提|名|B|
+premium|プレミアム・保険料|名|B|
+presence|存在・出席|名|B|
+president|大統領・社長|名|B|
+press|プレス・報道|名|B|
+pressure|圧力・プレッシャー|名|B|
+pretend|ふり|名|B|
+previous|前の|形|B|
+prey|獲物|名|B|
+price|価格|名|B|
+pride|誇り・プライド|名|B|
+priest|神父・僧侶|名|B|
+primary|主要な・初等の|形|B|
+prime|主要な・素数|形|B|
+prince|王子|名|B|
+princess|王女|名|B|
+principal|校長・主要な|名・形|B|
+principle|原則・原理|名|B|
+print|印刷|名|B|
+prior|前の|形|B|
+priority|優先事項|名|B|
+prison|刑務所|名|B|
+privacy|プライバシー|名|B|
+private|私的な・民間の|形|B|
+prize|賞|名|B|
+probably|たぶん|副|B|
+problem|問題|名|B|
+procedure|手順・手続き|名|B|
+process|過程・プロセス|名|B|
+produce|生産物|名|B|
+product|製品・生産物|名|B|
+professor|教授|名|B|
+profile|プロフィール|名|B|
+profit|利益|名|B|
+program|プログラム・番組|名|B|
+progress|進歩・進行|名|B|
+project|プロジェクト|名|B|
+prompt|即時の|形|B|
+proof|証拠・証明|名|B|
+proper|適切な|形|B|
+property|財産・性質|名|B|
+proposal|提案|名|B|
+prospect|見通し|名|B|
+protein|タンパク質|名|B|
+protest|抗議|名|B|
+proverb|ことわざ|名|B|
+province|州・省|名|B|
+psychology|心理学|名|B|
+public|公共の・公衆|形・名|B|
+publisher|出版社|名|B|
+pudding|プリン|名|B|
+pulse|脈拍|名|B|
+pump|ポンプ|名|B|
+pumpkin|カボチャ|名|B|
+punch|パンチ|名|B|
+pupil|生徒・瞳孔|名|B|
+purchase|購入|名|B|
+pure|純粋な|形|B|
+purple|紫|名|B|
+purpose|目的|名|B|
+purse|財布|名|B|
+pursuit|追求|名|B|
+puzzle|パズル|名|B|
+pyramid|ピラミッド|名|B|
+quality|質・品質|名|B|
+quantity|量|名|B|
+quarter|4分の1|名|B|
+query|質問|名|B|
+quest|探求|名|B|
+queue|列|名|B|
+quick|速い|形|B|
+quit|やめること|名|B|
+quiz|クイズ|名|B|
+quote|引用文|名|B|
+race|人種・レース|名|B|
+racial|人種の|形|B|
+rack|棚|名|B|
+radar|レーダー|名|B|
+rage|激怒|名|B|
+raid|襲撃|名|B|
+rail|レール・手すり|名|B|
+railroad|鉄道|名|B|
+railway|鉄道|名|B|
+rainbow|虹|名|B|
+rally|集会・ラリー|名|B|
+ranch|牧場|名|B|
+random|ランダムな|形|B|
+range|範囲・レンジ|名|B|
+rank|ランク・順位|名|B|
+rapid|急速な|形|B|
+rare|まれな・珍しい|形|B|
+rash|発疹|名|B|
+rate|割合・料金|名|B|
+ratio|比率|名|B|
+raw|生の・未加工の|形|B|
+ray|光線|名|B|
+razor|かみそり|名|B|
+reaction|反応|名|B|
+real|本当の・実際の|形|B|
+realism|現実主義|名|B|
+reality|現実|名|B|
+realm|領域・王国|名|B|
+rear|後部|名|B|
+reason|理由|名|B|
+reasonable|合理的な|形|B|
+rebel|反逆者|名|B|
+rebellion|反乱|名|B|
+recall|思い出すこと|名|B|
+receipt|領収書|名|B|
+recent|最近の|形|B|
+recipe|レシピ|名|B|
+record|記録・レコード|名|B|
+recovery|回復|名|B|
+recruit|新兵・新人|名|B|
+recycle|リサイクル|名|B|
+reform|改革|名|B|
+refuge|避難所|名|B|
+refugee|難民|名|B|
+refusal|拒否|名|B|
+regard|尊敬・みなすこと|名|B|
+region|地域|名|B|
+register|登録|名|B|
+regret|後悔|名|B|
+regular|定期的な・規則的な|形|B|
+rehearsal|リハーサル|名|B|
+reign|治世|名|B|
+relation|関係|名|B|
+relative|親戚・相対的な|名・形|B|
+release|解放・発売|名|B|
+relevant|関連のある|形|B|
+reliable|信頼できる|形|B|
+relief|安堵・救済|名|B|
+religion|宗教|名|B|
+religious|宗教的な|形|B|
+remark|発言・意見|名|B|
+remarkable|注目すべき|形|B|
+remedy|治療法・救済策|名|B|
+remind|思い出させること|名|B|
+remote|遠い・リモート|形|B|
+removal|除去|名|B|
+rent|家賃|名|B|
+reply|返事|名|B|
+republic|共和国|名|B|
+request|依頼・要求|名|B|
+rescue|救助|名|B|
+research|研究|名|B|
+reserve|予約・保留|名|B|
+resident|居住者|名|B|
+resolve|決意|名|B|
+resort|リゾート|名|B|
+resource|資源|名|B|
+respect|尊敬|名|B|
+respondent|回答者|名|B|
+response|反応・返答|名|B|
+rest|休息・残り|名|B|
+restraint|抑制|名|B|
+result|結果|名|B|
+resume|履歴書|名|B|
+retail|小売|名|B|
+retreat|退却|名|B|
+return|帰還・返却|名|B|
+reunion|再会・同窓会|名|B|
+reveal|明らかにすること|名|B|
+revenge|復讐|名|B|
+revenue|収益・歳入|名|B|
+review|レビュー・復習|名|B|
+revision|改訂|名|B|
+revival|復活|名|B|
+reward|報酬|名|B|
+rhythm|リズム|名|B|
+rib|肋骨|名|B|
+ribbon|リボン|名|B|
+rid|取り除くこと|名|B|
+ridge|尾根|名|B|
+ridiculous|ばかげた|形|B|
+rifle|ライフル|名|B|
+rigid|硬直した|形|B|
+rim|縁|名|B|
+riot|暴動|名|B|
+rip|裂け目|名|B|
+ripe|熟した|形|B|
+risk|危険・リスク|名|B|
+ritual|儀式|名|B|
+rival|ライバル|名|B|
+roar|吠える声|名|B|
+roast|ロースト|名|B|
+robber|強盗|名|B|
+robbery|強盗事件|名|B|
+robot|ロボット|名|B|
+rock|岩・ロック|名|B|
+rocket|ロケット|名|B|
+rod|棒|名|B|
+role|役割|名|B|
+roll|ロール・巻物|名|B|
+romance|ロマンス|名|B|
+romantic|ロマンチックな|形|B|
+roof|屋根|名|B|
+rook|ルーク（チェス）|名|B|
+root|根|名|B|
+rope|ロープ・縄|名|B|
+rose|バラ|名|B|
+rough|粗い・荒い|形|B|
+round|丸い・ラウンド|形・名|B|
+route|ルート・経路|名|B|
+routine|日常・ルーティン|名|B|
+row|列|名|B|
+royal|王室の|形|B|
+rub|こすること|名|B|
+rubber|ゴム|名|B|
+rubbish|ごみ|名|B|
+rude|失礼な|形|B|
+rug|敷物|名|B|
+ruin|廃墟・破滅|名|B|
+rule|規則|名|B|
+rumor|うわさ|名|B|
+runner|ランナー|名|B|
+rural|田舎の|形|B|
+rush|突進・ラッシュ|名|B|
+rust|さび|名|B|
+ruthless|無慈悲な|形|B|
+sacred|神聖な|形|B|
+sacrifice|犠牲|名|B|
+sadness|悲しみ|名|B|
+safety|安全|名|B|
+sail|帆|名|B|
+sake|ため・日本酒|名|B|
+salad|サラダ|名|B|
+salary|給料|名|B|
+sale|販売・セール|名|B|
+salesman|販売員|名|B|
+salmon|サーモン|名|B|
+salon|サロン|名|B|
+salt|塩|名|B|
+salute|敬礼|名|B|
+sample|サンプル・見本|名|B|
+sand|砂|名|B|
+sandwich|サンドイッチ|名|B|
+satellite|衛星|名|B|
+sauce|ソース|名|B|
+sausage|ソーセージ|名|B|
+scale|規模・はかり|名|B|
+scan|スキャン|名|B|
+scandal|スキャンダル|名|B|
+scare|恐怖|名|B|
+scene|場面・シーン|名|B|
+scenery|景色|名|B|
+schedule|スケジュール|名|B|
+scheme|計画・スキーム|名|B|
+scissors|はさみ|名|B|
+score|スコア・得点|名|B|
+scorn|軽蔑|名|B|
+scream|悲鳴|名|B|
+screen|スクリーン・画面|名|B|
+script|台本・スクリプト|名|B|
+seat|座席|名|B|
+secrecy|秘密|名|B|
+secret|秘密|名|B|
+secretary|秘書|名|B|
+section|部門・セクション|名|B|
+sector|セクター・分野|名|B|
+security|安全・セキュリティ|名|B|
+seed|種|名|B|
+self|自分・自己|名|B|
+selfish|利己的な|形|B|
+senior|先輩・上級|名|B|
+sense|感覚・センス|名|B|
+sensitive|敏感な|形|B|
+sentence|文・判決|名|B|
+series|シリーズ・連続|名|B|
+serious|真剣な・深刻な|形|B|
+service|サービス・奉仕|名|B|
+set|セット|名|B|
+several|いくつかの|形|B|
+severe|厳しい・深刻な|形|B|
+sex|性別|名|B|
+sexual|性的な|形|B|
+shade|日陰・影|名|B|
+shadow|影|名|B|
+shake|揺れ|名|B|
+shall|〜だろう|助|B|
+shape|形|名|B|
+sharp|鋭い|形|B|
+shave|ひげそり|名|B|
+sheet|シート・1枚|名|B|
+shelf|棚|名|B|
+shell|貝殻・殻|名|B|
+shelter|避難所|名|B|
+shift|交代・シフト|名|B|
+shine|輝き|名|B|
+shock|ショック・衝撃|名|B|
+shoe|靴|名|B|
+shoot|射撃|名|B|
+shore|岸・海岸|名|B|
+shortage|不足|名|B|
+shot|射撃・ショット|名|B|
+shoulder|肩|名|B|
+shout|叫び|名|B|
+shrimp|エビ|名|B|
+shut|閉じること|名|B|
+sickness|病気|名|B|
+side|側・面|名|B|
+sight|視力・光景|名|B|
+sign|標識・サイン|名|B|
+signal|信号・シグナル|名|B|
+silence|沈黙|名|B|
+silent|静かな・無言の|形|B|
+silver|銀|名|B|
+similar|似た|形|B|
+simple|簡単な・シンプルな|形|B|
+single|単一の・独身の|形|B|
+sink|流し・沈むこと|名|B|
+sir|サー・旦那様|名|B|
+site|場所・サイト|名|B|
+size|サイズ・大きさ|名|B|
+ski|スキー|名|B|
+skill|スキル・技能|名|B|
+skin|皮膚・肌|名|B|
+skirt|スカート|名|B|
+sleep|睡眠|名|B|
+slide|スライド|名|B|
+slight|わずかな|形|B|
+smell|におい|名|B|
+smoke|煙・喫煙|名|B|
+smooth|滑らかな|形|B|
+soap|石鹸|名|B|
+social|社会的な|形|B|
+society|社会|名|B|
+sock|靴下|名|B|
+sofa|ソファー|名|B|
+soft|柔らかい|形|B|
+software|ソフトウェア|名|B|
+soil|土壌・土|名|B|
+solar|太陽の|形|B|
+soldier|兵士|名|B|
+solid|固体の・固い|形|B|
+solution|解決策・溶液|名|B|
+somebody|誰か|代|B|
+somehow|どうにかして|副|B|
+someone|誰か|代|B|
+something|何か|代|B|
+somewhat|いくぶん|副|B|
+somewhere|どこかへ|副|B|
+son|息子|名|B|
+sound|音|名|B|
+soup|スープ|名|B|
+source|源・出典|名|B|
+south|南|名|B|
+southern|南の|形|B|
+space|宇宙・空間|名|B|
+span|期間・範囲|名|B|
+spare|予備の|形|B|
+spark|火花|名|B|
+species|種（生物）|名|B|
+specific|具体的な・特定の|形|B|
+speech|スピーチ・演説|名|B|
+speed|速度・スピード|名|B|
+spell|つづり・呪文|名|B|
+sphere|球体・範囲|名|B|
+spice|香辛料|名|B|
+spider|クモ|名|B|
+spill|こぼすこと|名|B|
+spin|回転|名|B|
+spirit|精神・魂|名|B|
+spiritual|精神的な|形|B|
+spite|悪意|名|B|
+splash|水しぶき|名|B|
+split|分割|名|B|
+spoil|台無し|名|B|
+spoke|スポーク|名|B|
+spokesman|スポークスマン|名|B|
+sponsor|スポンサー|名|B|
+spoon|スプーン|名|B|
+spot|場所・斑点|名|B|
+spouse|配偶者|名|B|
+spray|スプレー|名|B|
+spread|広がり|名|B|
+spy|スパイ|名|B|
+square|正方形・広場|名|B|
+squeeze|搾り|名|B|
+stable|安定した・馬小屋|形・名|B|
+stadium|スタジアム|名|B|
+staff|スタッフ・職員|名|B|
+stage|舞台・段階|名|B|
+stain|汚れ・シミ|名|B|
+stair|階段|名|B|
+stake|杭・賭け金|名|B|
+stamp|切手・スタンプ|名|B|
+standard|標準・基準|名|B|
+stare|じっと見ること|名|B|
+state|状態・州・国家|名|B|
+statistics|統計|名|B|
+statue|像|名|B|
+steady|安定した|形|B|
+steak|ステーキ|名|B|
+steal|盗み|名|B|
+steam|蒸気|名|B|
+steel|鋼鉄|名|B|
+steep|険しい|形|B|
+stem|茎・幹|名|B|
+step|ステップ・階段|名|B|
+stereo|ステレオ|名|B|
+stick|棒・スティック|名|B|
+stock|在庫・株式|名|B|
+stomach|胃・お腹|名|B|
+stone|石|名|B|
+storm|嵐|名|B|
+stove|ストーブ|名|B|
+straight|まっすぐな|形|B|
+strain|負担・緊張|名|B|
+strategy|戦略|名|B|
+straw|わら・ストロー|名|B|
+strawberry|イチゴ|名|B|
+stream|小川・流れ|名|B|
+strength|強さ・力|名|B|
+stress|ストレス・強調|名|B|
+stretch|ストレッチ|名|B|
+strict|厳しい|形|B|
+strike|ストライキ・打撃|名|B|
+string|ひも・糸|名|B|
+strip|細長い片|名|B|
+stroke|脳卒中・一撃|名|B|
+structure|構造|名|B|
+struggle|苦闘・もがき|名|B|
+studio|スタジオ|名|B|
+stuff|物・材料|名|B|
+stupid|ばかな|形|B|
+style|スタイル・様式|名|B|
+submarine|潜水艦|名|B|
+substitute|代用・代替|名|B|
+suburb|郊外|名|B|
+subway|地下鉄|名|B|
+success|成功|名|B|
+such|そのような|形|B|
+sudden|突然の|形|B|
+suffer|苦しみ|名|B|
+sufficient|十分な|形|B|
+sugar|砂糖|名|B|
+suicide|自殺|名|B|
+suit|スーツ・訴訟|名|B|
+suitable|適切な|形|B|
+suitcase|スーツケース|名|B|
+suite|スイートルーム|名|B|
+sum|合計|名|B|
+summary|要約|名|B|
+sunlight|日光|名|B|
+sunrise|日の出|名|B|
+sunset|日没|名|B|
+sunshine|日光・陽光|名|B|
+super|スーパーな|形|B|
+supper|夕食|名|B|
+supply|供給|名|B|
+support|支援・サポート|名|B|
+suppose|想定|名|B|
+supreme|最高の|形|B|
+surface|表面|名|B|
+surgeon|外科医|名|B|
+surgery|手術・外科|名|B|
+surname|姓|名|B|
+surplus|余剰|名|B|
+surrender|降伏|名|B|
+survey|調査|名|B|
+survival|生存|名|B|
+survivor|生存者|名|B|
+suspect|容疑者|名|B|
+suspicion|疑い|名|B|
+sustain|維持すること|名|B|
+swallow|ツバメ・飲み込むこと|名|B|
+swamp|沼地|名|B|
+swan|白鳥|名|B|
+swap|交換|名|B|
+swear|誓い|名|B|
+sweat|汗|名|B|
+sweep|掃くこと|名|B|
+sweet|甘い|形|B|
+swell|うねり|名|B|
+swift|速い|形|B|
+swing|スイング・揺れ|名|B|
+switch|スイッチ・転換|名|B|
+sword|剣|名|B|
+symbol|象徴・シンボル|名|B|
+sympathy|同情|名|B|
+symptom|症状|名|B|
+syndrome|症候群|名|B|
+system|システム・制度|名|B|
+table|テーブル・表|名|B|
+tablet|タブレット・錠剤|名|B|
+tackle|タックル|名|B|
+talent|才能|名|B|
+tape|テープ|名|B|
+target|目標・ターゲット|名|B|
+task|タスク・仕事|名|B|
+taste|味|名|B|
+tax|税金|名|B|
+taxi|タクシー|名|B|
+tear|涙・裂け目|名|B|
+technical|技術的な|形|B|
+technique|技術・テクニック|名|B|
+technology|技術・テクノロジー|名|B|
+teen|10代の若者|名|B|
+teenager|ティーンエイジャー|名|B|
+teeth|歯（複数）|名|B|
+telephone|電話|名|B|
+temporary|一時的な|形|B|
+tend|傾向|名|B|
+tension|緊張|名|B|
+term|期間・用語|名|B|
+terrible|ひどい|形|B|
+terrorism|テロリズム|名|B|
+text|テキスト・本文|名|B|
+textbook|教科書|名|B|
+than|〜より|接|B|
+thank|感謝|名|B|
+theater|劇場|名|B|
+theme|テーマ|名|B|
+themselves|彼ら自身|代|B|
+theory|理論|名|B|
+therefore|したがって|副|B|
+third|3番目|名|B|
+though|〜けれども|接|B|
+thought|考え・思考|名|B|
+threat|脅威・脅し|名|B|
+throughout|至る所に|前|B|
+thunder|雷|名|B|
+tie|ネクタイ・結び目|名|B|
+tight|きつい|形|B|
+tiny|とても小さい|形|B|
+tip|先端・ヒント・チップ|名|B|
+tire|タイヤ・疲れ|名|B|
+tissue|ティッシュ・組織|名|B|
+title|タイトル・肩書き|名|B|
+toilet|トイレ|名|B|
+told|tellの過去|名|B|
+tomato|トマト|名|B|
+tongue|舌・言語|名|B|
+tonight|今夜|名|B|
+tool|道具|名|B|
+tooth|歯|名|B|
+top|頂上・上|名|B|
+topic|トピック・話題|名|B|
+total|合計・総数|名|B|
+tough|タフな・厳しい|形|B|
+tour|ツアー・旅行|名|B|
+tourism|観光|名|B|
+toward|〜に向かって|前|B|
+toy|おもちゃ|名|B|
+track|トラック・軌道|名|B|
+trade|貿易・取引|名|B|
+traffic|交通・交通量|名|B|
+trait|特性|名|B|
+transfer|転送・移籍|名|B|
+transform|変形|名|B|
+transport|輸送|名|B|
+trap|わな|名|B|
+trash|ごみ|名|B|
+treat|扱い・ごちそう|名|B|
+trend|傾向・トレンド|名|B|
+trial|裁判・試行|名|B|
+triangle|三角形|名|B|
+trouble|トラブル・問題|名|B|
+truck|トラック|名|B|
+trust|信頼|名|B|
+truth|真実|名|B|
+tunnel|トンネル|名|B|
+twin|双子|名|B|
+type|タイプ・型|名|B|
+typical|典型的な|形|B|
+ugly|醜い|形|B|
+ultimate|究極の|形|B|
+umbrella|傘|名|B|
+unhappy|不幸な|形|B|
+uniform|制服・ユニフォーム|名|B|
+unique|唯一の・独特な|形|B|
+unit|単位・ユニット|名|B|
+unite|団結する|動|B|
+universe|宇宙|名|B|
+unknown|未知の|形|B|
+unless|〜でない限り|接|B|
+unlike|〜と違って|前|B|
+unusual|珍しい|形|B|
+up|上に|副|B|
+update|更新|名|B|
+upon|〜の上に|前|B|
+used|中古の・慣れた|形|B|
+user|ユーザー・使用者|名|B|
+usual|通常の|形|B|
+vacant|空いている|形|B|
+vaccine|ワクチン|名|B|
+valley|谷|名|B|
+valuable|貴重な|形|B|
+value|価値|名|B|
+variety|多様性・バラエティ|名|B|
+various|様々な|形|B|
+version|バージョン|名|B|
+victim|犠牲者|名|B|
+victory|勝利|名|B|
+video|ビデオ|名|B|
+view|見解・眺め|名|B|
+village|村|名|B|
+virus|ウイルス|名|B|
+vocabulary|語彙|名|B|
+voice|声|名|B|
+volcano|火山|名|B|
+volume|量・ボリューム|名|B|
+volunteer|ボランティア|名|B|
+vote|投票|名|B|
+vs|〜対|前|B|
+wallet|財布|名|B|
+wander|さまよう|動|B|
+war|戦争|名|B|
+ward|区・病棟|名|B|
+warn|警告する|動|B|
+waste|無駄・ごみ|名|B|
+wave|波|名|B|
+weapon|武器|名|B|
+web|ウェブ・網|名|B|
+website|ウェブサイト|名|B|
+wedding|結婚式|名|B|
+weekend|週末|名|B|
+welcome|歓迎|名|B|
+west|西|名|B|
+western|西洋の|形|B|
+wet|濡れた|形|B|
+whale|クジラ|名|B|
+wheat|小麦|名|B|
+wheel|車輪|名|B|
+whenever|いつでも|接|B|
+whether|〜かどうか|接|B|
+while|〜する間|接|B|
+whole|全体の|形|B|
+whose|誰の|代|B|
+wide|広い|形|B|
+wife|妻|名|B|
+wild|野生の|形|B|
+will|意志・〜だろう|名|B|
+wine|ワイン|名|B|
+within|〜以内に|前|B|
+wood|木材|名|B|
+worm|ミミズ・虫|名|B|
+worse|より悪い|形|B|
+worth|価値のある|形|B|
+would|〜だろう|助|B|
+yard|庭・ヤード|名|B|
+you|あなた|代|B|
+zone|ゾーン・地域|名|B|
+abroad|外国へ・外国に|副|C|
+absorb|吸収する|動|C|
+academic|学問の|形|C|
+access|アクセス・接近|名|C|
+accompany|同行する|動|C|
+accomplish|成し遂げる|動|C|
+accurate|正確な|形|C|
+achieve|達成する|動|C|
+acquire|習得する・得る|動|C|
+adapt|適応する|動|C|
+adjust|調整する|動|C|
+admire|感心する・あこがれる|動|C|
+admit|認める・入場を許す|動|C|
+adopt|採用する・養子にする|動|C|
+advance|進歩・前進|名|C|
+advantage|利点|名|C|
+adventure|冒険|名|C|
+advertise|宣伝する|動|C|
+affect|影響を与える|動|C|
+afford|余裕がある・買える|動|C|
+aid|援助|名|C|
+aim|狙う・目的|動・名|C|
+alarm|警報・目覚まし|名|C|
+alcohol|アルコール|名|C|
+alert|警戒した・注意|形|C|
+alike|似ている|形|C|
+alive|生きている|形|C|
+alliance|同盟|名|C|
+allocate|割り当てる|動|C|
+ally|同盟国・味方|名|C|
+aloud|声に出して|副|C|
+alter|変える|動|C|
+ambassador|大使|名|C|
+ambition|野心・大望|名|C|
+analyse|分析する|動|C|
+analysis|分析|名|C|
+ancestor|祖先|名|C|
+ancient|古代の|形|C|
+announce|発表する|動|C|
+annual|毎年の|形|C|
+anticipate|予期する|動|C|
+anxiety|不安・心配|名|C|
+anxious|心配した|形|C|
+apart|離れて|副|C|
+apologize|謝る|動|C|
+apparent|明らかな|形|C|
+appeal|訴える・魅力|動・名|C|
+appetite|食欲|名|C|
+applaud|拍手する|動|C|
+apply|申し込む・適用する|動|C|
+appoint|任命する|動|C|
+appreciate|感謝する・真価を認める|動|C|
+approach|近づく・方法|動・名|C|
+approve|承認する|動|C|
+architect|建築家|名|C|
+argue|議論する・主張する|動|C|
+argument|議論・主張|名|C|
+arise|生じる|動|C|
+arrange|整える・手配する|動|C|
+arrest|逮捕する|動|C|
+arrival|到着|名|C|
+arrow|矢|名|C|
+artificial|人工の|形|C|
+ashamed|恥じて|形|C|
+aside|わきへ|副|C|
+aspect|面・様相|名|C|
+assemble|集まる・組み立てる|動|C|
+assess|評価する|動|C|
+assign|割り当てる|動|C|
+assist|手伝う|動|C|
+associate|連想する・仲間|動・名|C|
+assume|仮定する・思い込む|動|C|
+assure|保証する|動|C|
+athletic|運動の・運動好きな|形|C|
+atmosphere|雰囲気・大気|名|C|
+attach|取り付ける|動|C|
+attempt|試みる|動|C|
+attend|出席する|動|C|
+attitude|態度|名|C|
+attract|引きつける|動|C|
+attractive|魅力的な|形|C|
+attribute|起因すると考える|動|C|
+avoid|避ける|動|C|
+awake|目覚めた|形|C|
+aware|気づいている|形|C|
+awful|ひどい|形|C|
+awkward|ぎこちない|形|C|
+ban|禁止する|動|C|
+bankrupt|破産した|形|C|
+banner|横断幕・旗|名|C|
+barely|かろうじて|副|C|
+bargain|お買い得品・取引|名|C|
+barrier|障壁・バリア|名|C|
+basically|基本的に|副|C|
+basis|基礎・根拠|名|C|
+beam|光線・梁|名|C|
+beard|あごひげ|名|C|
+beast|野獣|名|C|
+beat|打つ・打ち負かす|動|C|
+behalf|代わって・ため|名|C|
+behave|振る舞う|動|C|
+behavior|行動・振る舞い|名|C|
+belief|信念・信じること|名|C|
+belongings|所持品|名|C|
+beloved|最愛の|形|C|
+below|〜より下に|前|C|
+bend|曲げる・曲がる|動|C|
+beneath|〜の下に|前|C|
+benefit|利益・恩恵|名|C|
+bent|曲がった|形|C|
+betray|裏切る|動|C|
+beyond|〜を超えて|前|C|
+bid|入札する・努力|動・名|C|
+billboard|看板・掲示板|名|C|
+billion|10億|数|C|
+bind|縛る・結びつける|動|C|
+biography|伝記|名|C|
+bite|かむ・かみつく|動|C|
+bitter|苦い・つらい|形|C|
+blame|責める・責任|動・名|C|
+blank|空白の|形|C|
+blast|爆風・突風|名|C|
+bleed|出血する|動|C|
+blend|混ぜる|動|C|
+bless|祝福する|動|C|
+blind|目の不自由な|形|C|
+blockade|封鎖|名|C|
+blond|金髪の|形|C|
+bloom|花が咲く|動|C|
+blur|ぼやける|動|C|
+blush|顔を赤らめる|動|C|
+boast|自慢する|動|C|
+boil|沸騰する・ゆでる|動|C|
+bold|大胆な|形|C|
+bolt|ボルト・稲妻|名|C|
+bond|きずな・結びつき|名|C|
+boost|押し上げる|動|C|
+boot|ブーツ|名|C|
+bore|退屈させる|動|C|
+borrow|借りる|動|C|
+bother|悩ます・わざわざする|動|C|
+bounce|はねる|動|C|
+bound|縛られた・〜行きの|形|C|
+boundary|境界|名|C|
+bow|おじぎする・弓|動・名|C|
+brainstorm|アイデアを出し合う|動|C|
+brave|勇敢な|形|C|
+breadth|幅|名|C|
+breakdown|故障・崩壊|名|C|
+breath|息|名|C|
+breathe|呼吸する|動|C|
+breed|繁殖する・品種|動・名|C|
+breeze|そよ風|名|C|
+bribe|わいろ|名|C|
+brief|短い・簡潔な|形|C|
+bright|明るい・輝く|形|C|
+brilliant|輝かしい・すばらしい|形|C|
+brim|縁|名|C|
+broad|広い|形|C|
+broadcast|放送する|動|C|
+broken|壊れた|形|C|
+bronze|青銅|名|C|
+broom|ほうき|名|C|
+brow|眉・額|名|C|
+bruise|あざ|名|C|
+bulk|大量・かさ|名|C|
+bullet|銃弾|名|C|
+bully|いじめる・いじめっ子|動・名|C|
+bump|ぶつかる|動|C|
+bunch|束・房|名|C|
+bundle|束|名|C|
+burden|負担・重荷|名|C|
+bureau|局・事務局|名|C|
+burglar|強盗・泥棒|名|C|
+burn|燃える・焼ける|動|C|
+burst|破裂する|動|C|
+bury|埋める|動|C|
+bush|茂み|名|C|
+butterfly|蝶|名|C|
+calculate|計算する|動|C|
+calm|落ち着いた|形|C|
+calorie|カロリー|名|C|
+campus|キャンパス|名|C|
+cancel|取り消す|動|C|
+candidate|候補者|名|C|
+capable|能力がある|形|C|
+capacity|容量・能力|名|C|
+caption|見出し・字幕|名|C|
+capture|捕らえる|動|C|
+carbon|炭素|名|C|
+cargo|貨物|名|C|
+carpenter|大工|名|C|
+carriage|馬車|名|C|
+cart|カート・荷車|名|C|
+carve|彫る|動|C|
+casino|カジノ|名|C|
+cast|投げる・配役|動・名|C|
+casual|カジュアルな|形|C|
+catalogue|カタログ|名|C|
+category|カテゴリー・分野|名|C|
+cathedral|大聖堂|名|C|
+cattle|牛（家畜）|名|C|
+caution|注意・用心|名|C|
+cave|洞窟|名|C|
+cease|やめる・終わる|動|C|
+celebrate|祝う|動|C|
+cellphone|携帯電話|名|C|
+cement|セメント|名|C|
+cemetery|墓地|名|C|
+cent|セント|名|C|
+central|中心の|形|C|
+certain|確かな・ある|形|C|
+challenge|挑戦|名|C|
+chamber|部屋・会議室|名|C|
+chaos|混沌|名|C|
+charity|慈善|名|C|
+charm|魅力|名|C|
+chase|追いかける|動|C|
+chat|おしゃべり|名|C|
+cheap|安い|形|C|
+cheat|だます・カンニングする|動|C|
+check|確認する・小切手|動・名|C|
+cheek|頬|名|C|
+cheer|応援する・元気づける|動|C|
+chemical|化学の・化学物質|形・名|C|
+chemist|化学者|名|C|
+chess|チェス|名|C|
+chew|噛む|動|C|
+chill|冷たさ・悪寒|名|C|
+chip|チップ・欠片|名|C|
+chop|刻む・切る|動|C|
+chorus|コーラス|名|C|
+chronic|慢性の|形|C|
+cinema|映画館|名|C|
+circuit|回路|名|C|
+circular|円形の|形|C|
+circulate|循環する|動|C|
+cite|引用する|動|C|
+civil|市民の|形|C|
+clap|手をたたく|動|C|
+clarify|明確にする|動|C|
+clash|衝突する|動|C|
+classic|古典的な|形|C|
+classify|分類する|動|C|
+clause|条項・節|名|C|
+claw|爪|名|C|
+clerk|店員・事務員|名|C|
+clever|賢い|形|C|
+click|クリックする|動|C|
+client|依頼人・顧客|名|C|
+cliff|崖|名|C|
+clip|クリップ|名|C|
+clone|クローン|名|C|
+closet|物置・クローゼット|名|C|
+clown|ピエロ|名|C|
+collapse|崩壊する|動|C|
+colleague|同僚|名|C|
+colorful|カラフルな|形|C|
+comb|くし|名|C|
+combine|組み合わせる|動|C|
+comedy|コメディ・喜劇|名|C|
+commercial|商業の・CM|形・名|C|
+commit|犯す・委ねる|動|C|
+communist|共産主義者|名|C|
+companion|仲間・同伴者|名|C|
+compare|比べる|動|C|
+compass|コンパス・羅針盤|名|C|
+compete|競う|動|C|
+competitor|競争相手|名|C|
+complain|文句を言う|動|C|
+complete|完全な・完了する|形・動|C|
+complex|複雑な|形|C|
+compose|作曲する・構成する|動|C|
+compromise|妥協|名|C|
+conduct|行う・指揮する|動|C|
+confident|自信のある|形|C|
+confirm|確認する|動|C|
+confuse|混乱させる|動|C|
+congress|議会|名|C|
+connect|つなぐ|動|C|
+conquer|征服する・制覇する|動|C|
+conscious|意識している|形|C|
+consensus|合意|名|C|
+consent|同意|名|C|
+consider|考える・みなす|動|C|
+consist|成り立つ|動|C|
+consistent|一貫した|形|C|
+constant|絶え間ない|形|C|
+constitute|構成する|動|C|
+construct|建設する|動|C|
+consult|相談する|動|C|
+consume|消費する|動|C|
+contain|含む|動|C|
+context|文脈|名|C|
+continuous|連続した|形|C|
+contrary|反対の|形|C|
+contrast|対比・対照|名|C|
+contribute|貢献する|動|C|
+convenient|便利な|形|C|
+convert|変換する|動|C|
+convey|伝える・運ぶ|動|C|
+convince|納得させる|動|C|
+cookie|クッキー|名|C|
+cooperate|協力する|動|C|
+coordinate|調整する|動|C|
+cope|対処する|動|C|
+core|核心・芯|名|C|
+corporate|企業の|形|C|
+correspond|一致する・文通する|動|C|
+corridor|廊下|名|C|
+corrupt|腐敗した|形|C|
+costume|衣装|名|C|
+cottage|小別荘・コテージ|名|C|
+counsel|助言|名|C|
+county|郡|名|C|
+couple|カップル・2つ|名|C|
+coverage|報道・範囲|名|C|
+coward|臆病者|名|C|
+crazy|夢中な・頭がおかしい|形|C|
+create|創造する|動|C|
+creative|創造的な|形|C|
+criminal|犯罪者・刑事の|名・形|C|
+criteria|基準（複数）|名|C|
+critical|批判的な・重大な|形|C|
+criticism|批判|名|C|
+criticize|批判する|動|C|
+crucial|極めて重要な|形|C|
+cruel|残酷な|形|C|
+cruise|巡航・クルーズ|名|C|
+crush|押しつぶす|動|C|
+crystal|水晶・クリスタル|名|C|
+cultural|文化的な|形|C|
+cupboard|食器棚|名|C|
+curious|好奇心の強い|形|C|
+currency|通貨|名|C|
+current|現在の・流れ|形・名|C|
+curriculum|カリキュラム|名|C|
+cushion|クッション|名|C|
+daily|毎日の|形|C|
+dairy|酪農・乳製品|名|C|
+dam|ダム|名|C|
+damp|湿った|形|C|
+dare|あえてする|動|C|
+darling|最愛の人|名|C|
+dash|ダッシュする|動|C|
+daylight|日光|名|C|
+dead|死んだ|形|C|
+deaf|耳の聞こえない|形|C|
+dear|親愛なる|形|C|
+decay|腐敗・衰退|名|C|
+deceive|だます|動|C|
+decent|まともな・きちんとした|形|C|
+declare|宣言する|動|C|
+decline|断る・衰退する|動|C|
+decorate|飾る|動|C|
+decrease|減る・減らす|動|C|
+dedicate|捧げる|動|C|
+deed|行為|名|C|
+deem|みなす|動|C|
+defend|守る|動|C|
+defensive|防御的な|形|C|
+deficit|赤字|名|C|
+define|定義する|動|C|
+definite|明確な|形|C|
+delicate|繊細な|形|C|
+delight|喜び|名|C|
+deliver|配達する・届ける|動|C|
+democratic|民主的な|形|C|
+dense|濃い・密集した|形|C|
+deny|否定する|動|C|
+depart|出発する|動|C|
+depend|頼る・〜による|動|C|
+dependent|依存した|形|C|
+depressed|落ち込んだ|形|C|
+deputy|代理・副|名|C|
+derive|引き出す・由来する|動|C|
+describe|描写する|動|C|
+deserve|値する|動|C|
+despair|絶望|名|C|
+desperate|必死の|形|C|
+despite|にもかかわらず|前|C|
+destroy|破壊する|動|C|
+detect|検出する・見つける|動|C|
+determine|決める・決定する|動|C|
+develop|発達する・開発する|動|C|
+devil|悪魔|名|C|
+devote|捧げる|動|C|
+dial|ダイヤル|名|C|
+diameter|直径|名|C|
+dictate|命じる・口述する|動|C|
+differ|異なる|動|C|
+dig|掘る|動|C|
+digital|デジタルの|形|C|
+dignity|尊厳|名|C|
+dilemma|ジレンマ|名|C|
+diligent|勤勉な|形|C|
+diminish|減少する|動|C|
+dine|食事する|動|C|
+dinosaur|恐竜|名|C|
+direct|直接の・指示する|形・動|C|
+dirty|汚い|形|C|
+disabled|障害のある|形|C|
+disagree|反対する|動|C|
+disappear|消える|動|C|
+disappoint|がっかりさせる|動|C|
+disbelief|不信|名|C|
+disc|ディスク|名|C|
+discipline|規律・しつけ|名|C|
+discount|割引|名|C|
+discourage|落胆させる|動|C|
+discuss|議論する|動|C|
+disgrace|不名誉|名|C|
+disguise|変装|名|C|
+disgust|嫌悪|名|C|
+dishonest|不正直な|形|C|
+dislike|嫌う|動|C|
+dismay|落胆|名|C|
+dismiss|解散させる・退ける|動|C|
+disorder|混乱・障害|名|C|
+display|展示する・表示|動・名|C|
+disposal|処分|名|C|
+dispose|処分する|動|C|
+dispute|論争|名|C|
+disrupt|混乱させる|動|C|
+distant|遠い|形|C|
+distinct|明確な・異なる|形|C|
+distribute|配る・分配する|動|C|
+disturb|邪魔する|動|C|
+ditch|溝|名|C|
+dive|飛び込む|動|C|
+diverse|多様な|形|C|
+divide|分ける|動|C|
+divorce|離婚|名|C|
+dizzy|めまいがする|形|C|
+dodge|避ける|動|C|
+doll|人形|名|C|
+domestic|国内の・家庭の|形|C|
+dominant|支配的な|形|C|
+dominate|支配する|動|C|
+donate|寄付する|動|C|
+donkey|ロバ|名|C|
+donor|寄付者|名|C|
+doom|運命・破滅|名|C|
+doorway|戸口|名|C|
+dose|用量・1回分|名|C|
+doubtful|疑わしい|形|C|
+downward|下向きに|副|C|
+drag|引きずる|動|C|
+drain|排水する|動|C|
+dramatic|劇的な|形|C|
+drought|干ばつ|名|C|
+drown|溺れる|動|C|
+drunk|酔った|形|C|
+dry|乾いた|形|C|
+due|期限の・〜のせいで|形|C|
+dull|鈍い・退屈な|形|C|
+dumb|口のきけない・ばかな|形|C|
+dump|捨てる|動|C|
+dune|砂丘|名|C|
+dusk|夕暮れ|名|C|
+dusty|ほこりっぽい|形|C|
+dutch|オランダの|形|C|
+dvd|DVD|名|C|
+dying|死にかけた|形|C|
+dynamic|動的な・ダイナミックな|形|C|
+eager|熱心な|形|C|
+earn|稼ぐ・得る|動|C|
+earnest|真剣な|形|C|
+earnings|収入|名|C|
+easily|簡単に|副|C|
+eastern|東の|形|C|
+ecology|生態学|名|C|
+economic|経済の|形|C|
+economical|経済的な|形|C|
+economist|経済学者|名|C|
+ecosystem|生態系|名|C|
+edit|編集する|動|C|
+editorial|社説|名|C|
+educate|教育する|動|C|
+effective|効果的な|形|C|
+efficiency|効率|名|C|
+efficient|効率的な|形|C|
+eighteen|18|数|C|
+eighth|8番目|名|C|
+eighty|80|数|C|
+either|どちらか|代|C|
+elbow|肘|名|C|
+elder|年上の|形|C|
+elect|選ぶ|動|C|
+electric|電気の|形|C|
+electrical|電気に関する|形|C|
+electronic|電子の|形|C|
+elegant|優雅な|形|C|
+elementary|初歩の・小学校の|形|C|
+eligible|資格のある|形|C|
+eliminate|取り除く|動|C|
+else|ほかに|副|C|
+elsewhere|ほかの場所へ|副|C|
+embarrass|困らせる|動|C|
+embassy|大使館|名|C|
+embrace|抱きしめる|動|C|
+emerge|現れる|動|C|
+emission|排出|名|C|
+emit|放出する|動|C|
+emotional|感情的な|形|C|
+emphasize|強調する|動|C|
+employ|雇用する|動|C|
+empty|空の|形|C|
+enable|可能にする|動|C|
+encounter|遭遇する|動|C|
+encourage|励ます|動|C|
+endanger|危険にさらす|動|C|
+endeavor|努力|名|C|
+endless|終わりのない|形|C|
+endorse|支持する|動|C|
+endure|耐える|動|C|
+energetic|精力的な|形|C|
+enforce|施行する|動|C|
+engage|従事する・婚約する|動|C|
+enhance|高める|動|C|
+enjoyable|楽しい|形|C|
+enlarge|拡大する|動|C|
+enlighten|啓発する|動|C|
+enormous|巨大な|形|C|
+enough|十分な|形|C|
+ensure|確実にする|動|C|
+enterprise|企業|名|C|
+entertain|楽しませる|動|C|
+enthusiasm|熱意|名|C|
+entire|全体の|形|C|
+entitle|資格を与える|動|C|
+envision|思い描く|動|C|
+envy|うらやむ・ねたみ|動・名|C|
+epidemic|流行病|名|C|
+epoch|時代|名|C|
+equal|等しい|形|C|
+equation|方程式|名|C|
+equator|赤道|名|C|
+equip|装備する|動|C|
+equipped|装備した|形|C|
+equity|公平・株式|名|C|
+equivalent|同等の|形|C|
+era|時代|名|C|
+erase|消す|動|C|
+erect|建てる|動|C|
+erosion|浸食|名|C|
+errand|使い走り|名|C|
+erupt|噴火する|動|C|
+eruption|噴火|名|C|
+escort|護衛|名|C|
+essence|本質|名|C|
+establish|設立する|動|C|
+esteem|尊敬|名|C|
+estimate|見積もる・見積もり|動・名|C|
+eternal|永遠の|形|C|
+ethic|倫理|名|C|
+ethical|倫理的な|形|C|
+ethnic|民族の|形|C|
+evacuate|避難する|動|C|
+evaluate|評価する|動|C|
+eve|前夜|名|C|
+even|でさえ・平らな|副・形|C|
+eventual|最終的な|形|C|
+everybody|みんな|代|C|
+everyday|毎日の|形|C|
+everyone|みんな|代|C|
+everything|すべてのもの|代|C|
+everywhere|どこでも|副|C|
+evident|明らかな|形|C|
+evolve|進化する|動|C|
+exact|正確な|形|C|
+exaggerate|誇張する|動|C|
+examine|調べる|動|C|
+exceed|超える|動|C|
+excel|優れる|動|C|
+excellent|優秀な|形|C|
+except|〜を除いて|前|C|
+excess|過剰|名|C|
+excessive|過度の|形|C|
+excite|興奮させる|動|C|
+exclude|除外する|動|C|
+exclusive|排他的な・限定の|形|C|
+execute|実行する・処刑する|動|C|
+exhaust|疲れさせる・排気|動|C|
+exhibit|展示する|動|C|
+exist|存在する|動|C|
+expand|拡大する|動|C|
+expect|期待する・予期する|動|C|
+expectancy|期待|名|C|
+expensive|高価な|形|C|
+expertise|専門知識|名|C|
+explicit|明確な|形|C|
+explode|爆発する|動|C|
+explore|探検する|動|C|
+explosive|爆発性の|形|C|
+expose|さらす・暴露する|動|C|
+exposure|露出・暴露|名|C|
+express|表現する・急行|動・名|C|
+extend|延ばす・広がる|動|C|
+extensive|広範な|形|C|
+exterior|外部|名|C|
+external|外部の|形|C|
+extract|抽出する|動|C|
+extreme|極端な|形|C|
+eyebrow|眉毛|名|C|
+eyelash|まつげ|名|C|
+eyelid|まぶた|名|C|
+eyesight|視力|名|C|
+information|情報|名|B|
+environment|環境|名|B|
+education|教育|名|B|
+conversation|会話|名|B|
+difference|違い|名|B|
+development|発展・開発|名|B|
+communication|意思疎通・通信|名|B|
+competition|競争・大会|名|B|
+condition|状態・条件|名|B|
+attention|注意・注目|名|B|
+announcement|発表・お知らせ|名|B|
+apartment|アパート|名|B|
+appearance|外見・出現|名|B|
+application|応募・申し込み|名|B|
+career|経歴・職業人生|名|B|
+childhood|子ども時代|名|B|
+civilization|文明|名|B|
+clothes|衣服|名|B|
+collection|収集・コレクション|名|B|
+community|地域社会|名|B|
+concentration|集中|名|B|
+conference|会議|名|B|
+confidence|自信|名|B|
+connection|つながり・接続|名|B|
+consequence|結果|名|B|
+conservation|保護・保存|名|B|
+consideration|考慮・思いやり|名|B|
+construction|建設|名|B|
+container|容器・コンテナ|名|B|
+convenience|便利さ|名|B|
+cooperation|協力|名|B|
+corner|角・隅|名|B|
+counter|カウンター|名|B|
+curiosity|好奇心|名|B|
+customer|顧客・お客さん|名|B|
+department|部門・デパート|名|B|
+description|描写・説明|名|B|
+destination|目的地|名|B|
+discussion|議論|名|B|
+drawer|引き出し|名|B|
+editor|編集者|名|B|
+electricity|電気|名|B|
+employer|雇用主|名|B|
+employment|雇用|名|B|
+enjoyment|楽しみ|名|B|
+equipment|設備・装備|名|B|
+establishment|施設・設立|名|B|
+examination|試験・検査|名|B|
+explanation|説明|名|B|
+expression|表現・表情|名|B|
+government|政府|名|B|
+happiness|幸福・幸せ|名|B|
+imagination|想像力|名|B|
+importance|重要性|名|B|
+impression|印象|名|B|
+improvement|改善・上達|名|B|
+independence|独立|名|B|
+instruction|指示・指導|名|B|
+intelligence|知能・知性|名|B|
+opportunity|機会・チャンス|名|B|
+population|人口|名|B|
+preparation|準備|名|B|
+president|大統領・社長|名|B|
+production|生産・制作|名|B|
+protection|保護|名|B|
+relationship|関係・間柄|名|B|
+religion|宗教|名|B|
+research|研究・調査|名|B|
+scientist|科学者|名|B|
+situation|状況|名|B|
+society|社会|名|B|
+solution|解決策|名|B|
+success|成功|名|B|
+suggestion|提案・アドバイス|名|B|
+temperature|温度・気温|名|B|
+tradition|伝統|名|B|
+transportation|交通・輸送|名|B|
+understanding|理解|名|B|
+university|大学|名|B|
+pollution|汚染・公害|名|B|
+announce|発表する|動|C|
+approach|近づく・取り組む|動|C|
+appreciate|感謝する|動|C|
+celebrate|祝う|動|C|
+communicate|伝える・連絡し合う|動|C|
+concentrate|集中する|動|C|
+consider|よく考える・みなす|動|C|
+contribute|貢献する|動|C|
+cooperate|協力する|動|C|
+describe|描写する・説明する|動|C|
+determine|決める・決心する|動|C|
+develop|発達させる・開発する|動|C|
+encourage|励ます・勇気づける|動|C|
+establish|設立する・確立する|動|C|
+evaluate|評価する|動|C|
+examine|調べる・検査する|動|C|
+expand|広がる・拡大する|動|C|
+expect|期待する・予期する|動|C|
+experience|経験する|動|C|
+experiment|実験する|動|C|
+explain|説明する|動|C|
+express|表現する|動|C|
+extend|延ばす・広げる|動|C|
+graduate|卒業する|動|C|
+improve|改善する・上達する|動|C|
+increase|増える・増やす|動|C|
+influence|影響を与える|動|C|
+introduce|紹介する・導入する|動|C|
+investigate|調査する|動|C|
+participate|参加する|動|C|
+pollute|汚染する|動|C|
+predict|予測する|動|C|
+prepare|準備する|動|C|
+present|提示する・発表する|動|C|
+prevent|防ぐ・妨げる|動|C|
+produce|生産する・作り出す|動|C|
+protect|守る・保護する|動|C|
+provide|提供する・与える|動|C|
+publish|出版する・発表する|動|C|
+realize|気づく・実現する|動|C|
+receive|受け取る|動|C|
+recycle|リサイクルする|動|C|
+reduce|減らす|動|C|
+reflect|反射する・反映する|動|C|
+refuse|断る・拒否する|動|C|
+regard|みなす・尊敬|動|C|
+register|登録する|動|C|
+regret|後悔する|動|C|
+release|解放する・発売する|動|C|
+rely|頼る|動|C|
+remain|残る・〜のままである|動|C|
+remind|思い出させる|動|C|
+represent|代表する・表す|動|C|
+require|必要とする|動|C|
+rescue|救助する|動|C|
+reserve|予約する・取っておく|動|C|
+respect|尊敬する|動|C|
+respond|答える・反応する|動|C|
+responsible|責任がある|形|C|
+result|結果として起こる|動|C|
+retire|引退する・退職する|動|C|
+reuse|再利用する|動|C|
+revise|改訂する・復習する|動|C|
+separate|分ける・離れた|動・形|C|
+significant|重要な・著しい|形|C|
+suffer|苦しむ・受ける|動|C|
+suggest|提案する・ほのめかす|動|C|
+support|支える・支援する|動|C|
+suppose|〜と思う・仮定する|動|C|
+survive|生き残る|動|C|
+be interested in|〜に興味がある|熟語|D|熟語
+be good at|〜が得意である|熟語|D|熟語
+be bad at|〜が苦手である|熟語|D|熟語
+be proud of|〜を誇りに思う|熟語|D|熟語
+be famous for|〜で有名である|熟語|D|熟語
+be known for|〜で知られている|熟語|D|熟語
+be different from|〜と異なる|熟語|D|熟語
+be similar to|〜に似ている|熟語|D|熟語
+be full of|〜でいっぱいである|熟語|D|熟語
+be afraid of|〜を恐れる・心配する|熟語|D|熟語
+be worried about|〜を心配する|熟語|D|熟語
+be surprised at|〜に驚く|熟語|D|熟語
+be excited about|〜にわくわくする|熟語|D|熟語
+be satisfied with|〜に満足する|熟語|D|熟語
+be pleased with|〜に喜ぶ|熟語|D|熟語
+be angry with|〜に腹を立てる|熟語|D|熟語
+be kind to|〜に親切である|熟語|D|熟語
+be popular with|〜に人気がある|熟語|D|熟語
+be popular among|〜の間で人気がある|熟語|D|熟語
+be ready for|〜の用意ができている|熟語|D|熟語
+be ready to|進んで〜する|熟語|D|熟語
+be used to|〜に慣れている|熟語|D|熟語
+be able to|〜できる|熟語|D|熟語
+be going to|〜するつもり・〜だろう|熟語|D|熟語
+be born in|〜で生まれる|熟語|D|熟語
+be made of|〜でできている（材料が見える）|熟語|D|熟語
+be made from|〜でできている（材料が見えない）|熟語|D|熟語
+be covered with|〜で覆われている|熟語|D|熟語
+be filled with|〜で満たされている|熟語|D|熟語
+be crowded with|〜で混雑している|熟語|D|熟語
+be busy with|〜で忙しい|熟語|D|熟語
+be late for|〜に遅れる|熟語|D|熟語
+be absent from|〜を欠席する|熟語|D|熟語
+be present at|〜に出席する|熟語|D|熟語
+be married to|〜と結婚している|熟語|D|熟語
+be related to|〜と関係がある|熟語|D|熟語
+be connected to|〜とつながっている|熟語|D|熟語
+be based on|〜に基づいている|熟語|D|熟語
+be responsible for|〜に責任がある|熟語|D|熟語
+be suitable for|〜に適している|熟語|D|熟語
+be necessary for|〜に必要である|熟語|D|熟語
+be important for|〜にとって重要である|熟語|D|熟語
+be useful for|〜に役立つ|熟語|D|熟語
+be helpful to|〜の役に立つ|熟語|D|熟語
+be harmful to|〜に有害である|熟語|D|熟語
+be good for|〜に良い（健康など）|熟語|D|熟語
+be bad for|〜に悪い|熟語|D|熟語
+look forward to|〜を楽しみに待つ|熟語|D|熟語
+look up to|〜を尊敬する|熟語|D|熟語
+look down on|〜を見下す|熟語|D|熟語
+look after|〜の世話をする|熟語|D|熟語
+look for|〜を探す|熟語|D|熟語
+look up|（辞書で）調べる・見上げる|熟語|D|熟語
+look into|調べる・調査する|熟語|D|熟語
+look like|〜のように見える|熟語|D|熟語
+look at|〜を見る|熟語|D|熟語
+look out|気をつける|熟語|D|熟語
+get up|起きる|熟語|D|熟語
+get to|〜に着く・〜するようになる|熟語|D|熟語
+get on|乗る|熟語|D|熟語
+get off|降りる|熟語|D|熟語
+get along with|〜と仲良くやる|熟語|D|熟語
+get over|克服する・回復する|熟語|D|熟語
+get back|戻る・取り戻す|熟語|D|熟語
+get ready for|〜の準備をする|熟語|D|熟語
+get rid of|〜を取り除く|熟語|D|熟語
+get married|結婚する|熟語|D|熟語
+get lost|道に迷う|熟語|D|熟語
+get tired|疲れる|熟語|D|熟語
+get dark|暗くなる|熟語|D|熟語
+take care of|〜の世話をする|熟語|D|熟語
+take part in|〜に参加する|熟語|D|熟語
+take place|行われる・起こる|熟語|D|熟語
+take a picture|写真を撮る|熟語|D|熟語
+take a walk|散歩する|熟語|D|熟語
+take a rest|休む|熟語|D|熟語
+take a shower|シャワーを浴びる|熟語|D|熟語
+take off|離陸する・脱ぐ|熟語|D|熟語
+take out|取り出す・持ち帰る|熟語|D|熟語
+take away|持ち去る|熟語|D|熟語
+take up|始める・占める|熟語|D|熟語
+take down|書き留める・下ろす|熟語|D|熟語
+take turns|交代でする|熟語|D|熟語
+take advantage of|〜を利用する|熟語|D|熟語
+take pride in|〜を誇りに思う|熟語|D|熟語
+take action|行動を起こす|熟語|D|熟語
+take a chance|やってみる・賭ける|熟語|D|熟語
+put on|着る・身につける|熟語|D|熟語
+put off|延期する|熟語|D|熟語
+put out|消す（火）|熟語|D|熟語
+put up with|〜を我慢する|熟語|D|熟語
+put away|片づける|熟語|D|熟語
+put together|組み立てる|熟語|D|熟語
+give up|あきらめる|熟語|D|熟語
+give back|返す|熟語|D|熟語
+give out|配る・尽きる|熟語|D|熟語
+give away|ただで譲る|熟語|D|熟語
+make up one's mind|決心する|熟語|D|熟語
+make sure|確かめる|熟語|D|熟語
+make a mistake|間違える|熟語|D|熟語
+make a decision|決定する|熟語|D|熟語
+make progress|進歩する|熟語|D|熟語
+make friends with|〜と友達になる|熟語|D|熟語
+make fun of|〜をからかう|熟語|D|熟語
+make use of|〜を利用する|熟語|D|熟語
+make a living|生計を立てる|熟語|D|熟語
+make an effort|努力する|熟語|D|熟語
+make a difference|違いを生む・重要である|熟語|D|熟語
+make sense|意味が通る・道理にかなう|熟語|D|熟語
+come up with|思いつく|熟語|D|熟語
+come true|実現する|熟語|D|熟語
+come from|〜出身である|熟語|D|熟語
+come back|戻ってくる|熟語|D|熟語
+come in|入ってくる|熟語|D|熟語
+come out|出てくる・出版される|熟語|D|熟語
+come across|偶然出会う|熟語|D|熟語
+come to know|知るようになる|熟語|D|熟語
+come to like|好きになる|熟語|D|熟語
+go on|続く・続ける|熟語|D|熟語
+go out|外出する・消える|熟語|D|熟語
+go back|戻る|熟語|D|熟語
+go shopping|買い物に行く|熟語|D|熟語
+go fishing|釣りに行く|熟語|D|熟語
+go abroad|外国へ行く|熟語|D|熟語
+go to bed|寝る|熟語|D|熟語
+go on a trip|旅行に行く|熟語|D|熟語
+go through|経験する・通り抜ける|熟語|D|熟語
+go with|〜に合う・一緒に行く|熟語|D|熟語
+bring about|もたらす・引き起こす|熟語|D|熟語
+bring up|育てる・話題に出す|熟語|D|熟語
+bring back|持ち帰る・思い出させる|熟語|D|熟語
+carry out|実行する|熟語|D|熟語
+carry on|続ける|熟語|D|熟語
+find out|見つける・わかる|熟語|D|熟語
+figure out|理解する・解決する|熟語|D|熟語
+work out|うまくいく・解く・運動する|熟語|D|熟語
+point out|指摘する|熟語|D|熟語
+check out|調べる・確認する|熟語|D|熟語
+hand in|提出する|熟語|D|熟語
+hand out|配る|熟語|D|熟語
+fill in|記入する|熟語|D|熟語
+fill out|（書類に）記入する|熟語|D|熟語
+set up|設立する・準備する|熟語|D|熟語
+set out|出発する|熟語|D|熟語
+stand up|立ち上がる|熟語|D|熟語
+stand for|表す・意味する|熟語|D|熟語
+stand out|目立つ|熟語|D|熟語
+sit down|座る|熟語|D|熟語
+wake up|目覚める|熟語|D|熟語
+grow up|成長する・大人になる|熟語|D|熟語
+show up|現れる|熟語|D|熟語
+show off|見せびらかす|熟語|D|熟語
+turn on|つける（電源）|熟語|D|熟語
+turn off|消す（電源）|熟語|D|熟語
+turn up|現れる・音を上げる|熟語|D|熟語
+turn down|断る・音を下げる|熟語|D|熟語
+turn into|〜に変わる|熟語|D|熟語
+turn out|〜だとわかる|熟語|D|熟語
+run out of|〜を使い果たす|熟語|D|熟語
+run into|偶然出会う・衝突する|熟語|D|熟語
+run away|逃げる|熟語|D|熟語
+run after|追いかける|熟語|D|熟語
+break down|故障する・壊れる|熟語|D|熟語
+break out|勃発する|熟語|D|熟語
+break up|解散する・別れる|熟語|D|熟語
+break into|押し入る|熟語|D|熟語
+keep on|〜し続ける|熟語|D|熟語
+keep up with|〜に遅れずついていく|熟語|D|熟語
+keep in touch|連絡を取り合う|熟語|D|熟語
+keep a diary|日記をつける|熟語|D|熟語
+keep a promise|約束を守る|熟語|D|熟語
+keep silent|黙っている|熟語|D|熟語
+keep smiling|笑顔でい続ける|熟語|D|熟語
+depend on|〜に頼る・〜による|熟語|D|熟語
+rely on|〜に頼る|熟語|D|熟語
+concentrate on|〜に集中する|熟語|D|熟語
+focus on|〜に焦点を当てる|熟語|D|熟語
+insist on|〜を主張する|熟語|D|熟語
+agree with|〜に同意する|熟語|D|熟語
+agree on|〜について合意する|熟語|D|熟語
+agree to|〜に同意する（提案）|熟語|D|熟語
+deal with|〜に対処する・扱う|熟語|D|熟語
+cope with|〜に対処する|熟語|D|熟語
+suffer from|〜に苦しむ|熟語|D|熟語
+suffer from|〜で苦しむ|熟語|D|熟語
+result in|〜という結果になる|熟語|D|熟語
+result from|〜が原因で起こる|熟語|D|熟語
+lead to|〜につながる・引き起こす|熟語|D|熟語
+belong to|〜に属する|熟語|D|熟語
+listen to|〜を聞く|熟語|D|熟語
+talk about|〜について話す|熟語|D|熟語
+talk to|〜に話しかける|熟語|D|熟語
+talk with|〜と話す|熟語|D|熟語
+speak to|〜に話しかける|熟語|D|熟語
+think about|〜について考える|熟語|D|熟語
+think of|〜を思いつく・考える|熟語|D|熟語
+think over|よく考える|熟語|D|熟語
+care about|〜を気にかける|熟語|D|熟語
+care for|〜の世話をする・好きである|熟語|D|熟語
+wait for|〜を待つ|熟語|D|熟語
+wait on|〜の給仕をする|熟語|D|熟語
+hope for|〜を望む|熟語|D|熟語
+ask for|〜を求める|熟語|D|熟語
+ask about|〜についてたずねる|熟語|D|熟語
+pay for|〜の代金を払う|熟語|D|熟語
+pay attention to|〜に注意を払う|熟語|D|熟語
+thank for|〜に感謝する|熟語|D|熟語
+apologize for|〜について謝る|熟語|D|熟語
+apologize to|〜に謝る|熟語|D|熟語
+laugh at|〜を笑う|熟語|D|熟語
+smile at|〜にほほえむ|熟語|D|熟語
+stare at|〜をじっと見る|熟語|D|熟語
+look forward|楽しみに待つこと|熟語|D|熟語
+shout at|〜に怒鳴る|熟語|D|熟語
+arrive at|〜に到着する（場所）|熟語|D|熟語
+arrive in|〜に到着する（都市・国）|熟語|D|熟語
+leave for|〜へ向けて出発する|熟語|D|熟語
+start for|〜へ出発する|熟語|D|熟語
+graduate from|〜を卒業する|熟語|D|熟語
+borrow from|〜から借りる|熟語|D|熟語
+hear from|〜から連絡をもらう|熟語|D|熟語
+hear of|〜のうわさを聞く|熟語|D|熟語
+learn from|〜から学ぶ|熟語|D|熟語
+learn about|〜について学ぶ|熟語|D|熟語
+die of|〜で死ぬ（病気など）|熟語|D|熟語
+die from|〜で死ぬ（外因）|熟語|D|熟語
+escape from|〜から逃げる|熟語|D|熟語
+protect from|〜から守る|熟語|D|熟語
+prevent from|〜がするのを防ぐ|熟語|D|熟語
+keep from|〜しないようにする|熟語|D|熟語
+stop from|〜するのを止める|熟語|D|熟語
+differ from|〜と異なる|熟語|D|熟語
+separate from|〜から分ける|熟語|D|熟語
+in front of|〜の前に|連語|D|熟語
+in the center of|〜の中心に|連語|D|熟語
+in the middle of|〜の真ん中に・〜の最中に|連語|D|熟語
+in the end|最後に・結局|連語|D|熟語
+at the end of|〜の終わりに|連語|D|熟語
+at first|最初は|連語|D|熟語
+at last|ついに・やっと|連語|D|熟語
+at least|少なくとも|連語|D|熟語
+at most|多くても|連語|D|熟語
+at once|すぐに・一度に|連語|D|熟語
+at the same time|同時に|連語|D|熟語
+at the moment|今のところ|連語|D|熟語
+at present|現在は|連語|D|熟語
+at times|ときどき|連語|D|熟語
+at home|家で・在宅で|連語|D|熟語
+at school|学校で|連語|D|熟語
+at work|仕事中で|連語|D|熟語
+at night|夜に|連語|D|熟語
+at noon|正午に|連語|D|熟語
+at midnight|真夜中に|連語|D|熟語
+at dawn|夜明けに|連語|D|熟語
+at the age of|〜歳のときに|連語|D|熟語
+at the top of|〜の頂上に|連語|D|熟語
+at the bottom of|〜の底に|連語|D|熟語
+at the foot of|〜のふもとに|連語|D|熟語
+at a time|一度に|連語|D|熟語
+at any time|いつでも|連語|D|熟語
+at any cost|どんな犠牲を払っても|連語|D|熟語
+at all costs|ぜひとも|連語|D|熟語
+at random|無作為に|連語|D|熟語
+at risk|危険にさらされて|連語|D|熟語
+at peace|平和に|連語|D|熟語
+at war|戦争中で|連語|D|熟語
+at rest|休んで|連語|D|熟語
+at ease|安心して|連語|D|熟語
+at a loss|途方に暮れて|連語|D|熟語
+at a glance|一目で|連語|D|熟語
+at a speed of|〜の速さで|連語|D|熟語
+at sea|海上に・航海中で|連語|D|熟語
+at hand|手元に|連語|D|熟語
+at heart|心の中では|連語|D|熟語
+at length|ついに・詳細に|連語|D|熟語
+at sight|見てすぐに|連語|D|熟語
+at will|思いのままに|連語|D|熟語
+by bus|バスで|連語|D|熟語
+by train|電車で|連語|D|熟語
+by car|車で|連語|D|熟語
+by plane|飛行機で|連語|D|熟語
+by ship|船で|連語|D|熟語
+by bike|自転車で|連語|D|熟語
+by hand|手で|連語|D|熟語
+by mail|郵便で|連語|D|熟語
+by e-mail|メールで|連語|D|熟語
+by phone|電話で|連語|D|熟語
+by myself|私一人で・自分で|連語|D|熟語
+by yourself|あなた一人で|連語|D|熟語
+by himself|彼一人で|連語|D|熟語
+by herself|彼女一人で|連語|D|熟語
+by itself|それ自体で|連語|D|熟語
+by ourselves|私たちだけで|連語|D|熟語
+by themselves|彼らだけで|連語|D|熟語
+by the way|ところで|連語|D|熟語
+by chance|偶然に|連語|D|熟語
+by mistake|間違って|連語|D|熟語
+by accident|偶然に・事故で|連語|D|熟語
+by all means|ぜひとも|連語|D|熟語
+by any means|何としてでも|連語|D|熟語
+by no means|決して〜ない|連語|D|熟語
+by far|はるかに|連語|D|熟語
+by degrees|徐々に|連語|D|熟語
+by heart|暗記して|連語|D|熟語
+by name|名前で|連語|D|熟語
+by nature|生まれつき|連語|D|熟語
+by sight|見た目で|連語|D|熟語
+by surprise|不意に|連語|D|熟語
+by turns|交代に|連語|D|熟語
+by word of mouth|口コミで|連語|D|熟語
+for example|例えば|連語|D|熟語
+for instance|例えば|連語|D|熟語
+for a while|しばらくの間|連語|D|熟語
+for a moment|少しの間|連語|D|熟語
+for a long time|長い間|連語|D|熟語
+for the first time|初めて|連語|D|熟語
+for the last time|最後に|連語|D|熟語
+for the time being|当分の間|連語|D|熟語
+for now|今のところは|連語|D|熟語
+for free|無料で|連語|D|熟語
+for fun|楽しみのために|連語|D|熟語
+for good|永遠に|連語|D|熟語
+for life|生涯・終身で|連語|D|熟語
+for sale|販売中で|連語|D|熟語
+for rent|賃貸中で|連語|D|熟語
+for a walk|散歩に|連語|D|熟語
+for a drive|ドライブに|連語|D|熟語
+for a swim|泳ぎに|連語|D|熟語
+for a trip|旅行に|連語|D|熟語
+for a picnic|ピクニックに|連語|D|熟語
+for a change|気分転換に|連語|D|熟語
+for some reason|何らかの理由で|連語|D|熟語
+for no reason|理由もなく|連語|D|熟語
+for this reason|この理由で|連語|D|熟語
+for that reason|その理由で|連語|D|熟語
+for the purpose of|〜の目的で|連語|D|熟語
+for the sake of|〜のために|連語|D|熟語
+for the benefit of|〜の利益のために|連語|D|熟語
+for the future|将来のために|連語|D|熟語
+for the rest of|〜の残りの間|連語|D|熟語
+for years|何年も|連語|D|熟語
+for ages|長い間|連語|D|熟語
+in a hurry|急いで|連語|D|熟語
+in a moment|すぐに|連語|D|熟語
+in a minute|すぐに|連語|D|熟語
+in a row|連続して|連語|D|熟語
+in a line|一列に|連語|D|熟語
+in a circle|円になって|連語|D|熟語
+in a group|グループで|連語|D|熟語
+in a way|ある意味で|連語|D|熟語
+in a sense|ある意味で|連語|D|熟語
+in a word|一言で言えば|連語|D|熟語
+in other words|言い換えれば|連語|D|熟語
+in short|要するに|連語|D|熟語
+in brief|簡単に言えば|連語|D|熟語
+in detail|詳細に|連語|D|熟語
+in general|一般に|連語|D|熟語
+in particular|特に|連語|D|熟語
+in fact|実際は|連語|D|熟語
+in reality|実際は|連語|D|熟語
+in truth|実は|連語|D|熟語
+in practice|実際には|連語|D|熟語
+in theory|理論上は|連語|D|熟語
+in public|公に・人前で|連語|D|熟語
+in private|内密に|連語|D|熟語
+in secret|秘密に|連語|D|熟語
+in silence|黙って|連語|D|熟語
+in peace|平和に|連語|D|熟語
+in danger|危険な状態で|連語|D|熟語
+in trouble|困って|連語|D|熟語
+in need|困窮して|連語|D|熟語
+in pain|痛がって|連語|D|熟語
+in tears|泣いて|連語|D|熟語
+in surprise|驚いて|連語|D|熟語
+in fear|恐れて|連語|D|熟語
+in anger|怒って|連語|D|熟語
+in a panic|パニックになって|連語|D|熟語
+in a rush|急いで|連語|D|熟語
+in a mess|散らかって|連語|D|熟語
+in order|整って・順番に|連語|D|熟語
+in order to|〜するために|連語|D|熟語
+in addition|その上|連語|D|熟語
+in addition to|〜に加えて|連語|D|熟語
+in advance|前もって|連語|D|熟語
+in the future|将来は|連語|D|熟語
+in the past|過去には|連語|D|熟語
+in the morning|朝に|連語|D|熟語
+in the afternoon|午後に|連語|D|熟語
+in the evening|夕方に|連語|D|熟語
+in the rain|雨の中で|連語|D|熟語
+in the snow|雪の中で|連語|D|熟語
+in the sun|日なたで|連語|D|熟語
+in the shade|日陰で|連語|D|熟語
+in the dark|暗闇で|連語|D|熟語
+in the sky|空に|連語|D|熟語
+in the end|最後に|連語|D|熟語
+in the first place|そもそも・まず第一に|連語|D|熟語
+in the same way|同じように|連語|D|熟語
+in this way|このように|連語|D|熟語
+in that way|そのように|連語|D|熟語
+in many ways|多くの点で|連語|D|熟語
+in some ways|いくつかの点で|連語|D|熟語
+in any way|何らかの方法で|連語|D|熟語
+in no way|決して〜ない|連語|D|熟語
+in every way|あらゆる点で|連語|D|熟語
+in a good way|良い意味で|連語|D|熟語
+in a bad way|悪い状態で|連語|D|熟語
+in a soft voice|小声で|連語|D|熟語
+in a loud voice|大声で|連語|D|熟語
+in a low voice|小声で|連語|D|熟語
+in writing|書面で|連語|D|熟語
+in print|印刷されて|連語|D|熟語
+in person|直接に・本人自ら|連語|D|熟語
+in private|内密に|連語|D|熟語
+according to|〜によると・〜によれば|連語|D|熟語
+as soon as|〜するとすぐに|連語|D|熟語
+be - was / were - been|〜である（原形 - 過去形 - 過去分詞）|動|E|不規則
+become - became - become|〜になる|動|E|不規則
+begin - began - begun|始める|動|E|不規則
+break - broke - broken|壊す・折る|動|E|不規則
+bring - brought - brought|持ってくる|動|E|不規則
+build - built - built|建てる|動|E|不規則
+buy - bought - bought|買う|動|E|不規則
+catch - caught - caught|捕まえる|動|E|不規則
+choose - chose - chosen|選ぶ|動|E|不規則
+come - came - come|来る|動|E|不規則
+cut - cut - cut|切る|動|E|不規則
+do - did - done|する|動|E|不規則
+draw - drew - drawn|描く|動|E|不規則
+drink - drank - drunk|飲む|動|E|不規則
+drive - drove - driven|運転する|動|E|不規則
+eat - ate - eaten|食べる|動|E|不規則
+fall - fell - fallen|落ちる|動|E|不規則
+feel - felt - felt|感じる|動|E|不規則
+find - found - found|見つける|動|E|不規則
+fly - flew - flown|飛ぶ|動|E|不規則
+forget - forgot - forgotten|忘れる|動|E|不規則
+get - got - gotten|得る・〜になる|動|E|不規則
+give - gave - given|与える|動|E|不規則
+go - went - gone|行く|動|E|不規則
+grow - grew - grown|育つ・育てる|動|E|不規則
+have - had - had|持っている|動|E|不規則
+hear - heard - heard|聞こえる|動|E|不規則
+hold - held - held|持つ・開催する|動|E|不規則
+keep - kept - kept|保つ|動|E|不規則
+know - knew - known|知っている|動|E|不規則
+leave - left - left|去る・残す|動|E|不規則
+lose - lost - lost|失う・負ける|動|E|不規則
+make - made - made|作る|動|E|不規則
+mean - meant - meant|意味する|動|E|不規則
+meet - met - met|会う|動|E|不規則
+pay - paid - paid|支払う|動|E|不規則
+put - put - put|置く|動|E|不規則
+read - read - read|読む（発音が変わる）|動|E|不規則
+ride - rode - ridden|乗る|動|E|不規則
+ring - rang - rung|鳴る|動|E|不規則
+rise - rose - risen|上がる|動|E|不規則
+run - ran - run|走る|動|E|不規則
+say - said - said|言う|動|E|不規則
+see - saw - seen|見える・会う|動|E|不規則
+sell - sold - sold|売る|動|E|不規則
+send - sent - sent|送る|動|E|不規則
+sing - sang - sung|歌う|動|E|不規則
+sit - sat - sat|座る|動|E|不規則
+speak - spoke - spoken|話す|動|E|不規則
+spend - spent - spent|費やす・過ごす|動|E|不規則
+stand - stood - stood|立つ|動|E|不規則
+swim - swam - swum|泳ぐ|動|E|不規則
+take - took - taken|取る|動|E|不規則
+teach - taught - taught|教える|動|E|不規則
+tell - told - told|話す・教える|動|E|不規則
+think - thought - thought|思う・考える|動|E|不規則
+throw - threw - thrown|投げる|動|E|不規則
+understand - understood - understood|理解する|動|E|不規則
+wake - woke - woken|目覚める|動|E|不規則
+wear - wore - worn|着ている|動|E|不規則
+win - won - won|勝つ|動|E|不規則
+write - wrote - written|書く|動|E|不規則
+acquisition|習得・獲得|名|E|発展
+adolescent|思春期の・青年|形・名|E|発展
+ambitious|野心的な|形|E|発展
+apprehend|理解する・逮捕する|動|E|発展
+bilingual|二言語を使う|形|E|発展
+collaborate|共同で取り組む|動|E|発展
+commodity|商品・日用品|名|E|発展
+compensate|埋め合わせる・補償する|動|E|発展
+criterion|基準・判断材料|名|E|発展
+dedicate|捧げる・専念する|動|E|発展
+entrepreneur|起業家|名|E|発展
+facilitate|容易にする・促進する|動|E|発展
+globalization|グローバル化|名|E|発展
+heritage|遺産|名|E|発展
+hypothesis|仮説|名|E|発展
+incentive|動機・やる気を起こすもの|名|E|発展
+infrastructure|インフラ・社会基盤|名|E|発展
+innovation|革新・イノベーション|名|E|発展
+inspire|奮い立たせる・感動させる|動|E|発展
+institution|機関・制度|名|E|発展
+integrate|統合する|動|E|発展
+integrity|誠実さ・高潔さ|名|E|発展
+intellectual|知的な|形|E|発展
+interact|交流する・影響し合う|動|E|発展
+intermediate|中級の|形|E|発展
+interpret|解釈する・通訳する|動|E|発展
+intervene|介入する|動|E|発展
+magnificent|壮大な・見事な|形|E|発展
+multicultural|多文化の|形|E|発展
+negotiate|交渉する|動|E|発展
+objective|目的・客観的な|名・形|E|発展
+obtain|得る・手に入れる|動|E|発展
+optimistic|楽観的な|形|E|発展
+originate|始まる・発祥する|動|E|発展
+pessimistic|悲観的な|形|E|発展
+prestige|名声・威信|名|E|発展
+prosper|繁栄する|動|E|発展
+questionnaire|アンケート|名|E|発展
+racism|人種差別|名|E|発展
+recommend|勧める・推薦する|動|E|発展
+regardless|にもかかわらず|副|E|発展
+reinforce|強化する|動|E|発展
+resemble|似ている|動|E|発展
+stereotype|固定観念|名|E|発展
+stimulus|刺激|名|E|発展
+sustainable|持続可能な|形|E|発展
+`;
+const EXAMPLES = {
+  "important":["It is important to read books every day.","毎日本を読むことは大切だ。"],
+  "decide":["I decided to study abroad next year.","私は来年留学することに決めた。"],
+  "become":["She became a doctor five years ago.","彼女は5年前に医者になった。"],
+  "believe":["I believe you can pass the exam.","君なら試験に合格できると信じている。"],
+  "understand":["Do you understand the question?","その質問が分かりますか。"],
+  "remember":["Please remember to bring your homework.","宿題を持ってくるのを覚えておいてね。"],
+  "different":["Japanese schools are different from American schools.","日本の学校はアメリカの学校と異なる。"],
+  "environment":["We must protect the environment.","私たちは環境を守らなければならない。"],
+  "future":["What do you want to be in the future?","将来、何になりたいですか。"],
+  "culture":["I want to learn about other cultures.","他の文化について学びたい。"],
+  "experience":["It was a wonderful experience for me.","それは私にとってすばらしい経験だった。"],
+  "be interested in":["He is interested in science.","彼は理科に興味がある。"],
+  "look forward to":["I'm looking forward to seeing you.","あなたに会えるのを楽しみにしています。"],
+  "take part in":["Many students took part in the contest.","多くの生徒がそのコンテストに参加した。"],
+  "take place":["The festival takes place in August.","その祭りは8月に行われる。"],
+  "give up":["Never give up your dream.","決して夢をあきらめるな。"],
+  "come up with":["She came up with a good idea.","彼女は良いアイデアを思いついた。"],
+  "depend on":["Success depends on your effort.","成功はあなたの努力による。"],
+  "in front of":["There is a park in front of the station.","駅の前に公園がある。"],
+  "for example":["Many fruits, for example apples, are good for you.","りんごなど、多くの果物は体に良い。"],
+  "in order to":["I get up early in order to study English.","英語を勉強するために早起きする。"],
+  "sustainable":["We need sustainable energy for the future.","将来のために持続可能なエネルギーが必要だ。"],
+  "according to":["According to the weather report, it will rain tomorrow.","天気予報によると、明日は雨が降るそうです。"],
+  "as soon as":["Please call me as soon as you get home.","家に着いたら、すぐに私に電話してください。"],
+  "pollution":["Air pollution is a serious problem in big cities.","大気汚染は大都市では深刻な問題だ。"]
+};
+const RANK_META = {
+  S:{name:"超頻出",desc:"入試に毎年のように出る最重要語。まずここを制覇。",color:"var(--s)"},
+  A:{name:"頻出",desc:"長文・会話文で何度も出る定番語。",color:"var(--a)"},
+  B:{name:"標準",desc:"中学校の教科書語彙の中心。土台を固める帯。",color:"var(--b)"},
+  C:{name:"発展",desc:"上位校・私立で差がつく語彙。",color:"var(--c)"},
+  D:{name:"難関・熟語",desc:"入試頻出の熟語・連語が中心。長文の鍵になる帯。",color:"var(--d)"},
+  E:{name:"最難関",desc:"不規則動詞の活用と難関校向け発展語彙。",color:"var(--e)"}
+};
+const RANK_ORDER = ["S","A","B","C","D","E"];
+const seenKey = new Set();
+const WORDS = [];
+RAW.trim().split("\n").forEach(function(line){
+  const p = line.split("|");
+  if(p.length < 4) return;
+  const en = p[0].trim(), key = en.toLowerCase();
+  if(!en || seenKey.has(key)) return;
+  seenKey.add(key);
+  const item = {en:en, ja:p[1].trim(), pos:p[2].trim(), rank:p[3].trim(), cat:(p[4]||"").trim(), id:WORDS.length};
+  const ex = EXAMPLES[key];
+  if(ex){ item.exEn = ex[0]; item.exJa = ex[1]; }
+  WORDS.push(item);
+});
+
+/* ============ STATE (saved on this device only, via localStorage) ============ */
+const STORAGE_KEY = "eitango-trainer-progress-v1";
+const state = {
+  xp:0, level:1,
+  mastered:new Set(), weak:new Set(),
+  quizTotal:0, quizCorrect:0, combo:0, bestCombo:0,
+  filter:"ALL", mode:"card",
+  deck:[], idx:0, flipped:false,
+  quizItem:null, quizAnswered:false, quizDir:0,
+  listenTotal:0, listenCorrect:0, listenItem:null, listenAnswered:false
+};
+/* Save progress to this device/browser only. Nothing is sent anywhere.
+   Mastered / weak words are stored by their English text (not by list
+   position), so saved progress stays valid even if the word list is
+   reordered or extended in a future update. */
+function saveProgress(){
+  try{
+    const toEn = function(id){ return WORDS[id] ? WORDS[id].en : null; };
+    const data = {
+      xp: state.xp,
+      level: state.level,
+      mastered: Array.from(state.mastered).map(toEn).filter(function(en){ return !!en; }),
+      weak: Array.from(state.weak).map(toEn).filter(function(en){ return !!en; }),
+      quizTotal: state.quizTotal,
+      quizCorrect: state.quizCorrect,
+      listenTotal: state.listenTotal,
+      listenCorrect: state.listenCorrect,
+      bestCombo: state.bestCombo
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }catch(e){ /* storage unavailable (e.g. blocked): keep in-memory progress for this session */ }
+}
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return;
+    const data = JSON.parse(raw);
+    if(!data || typeof data !== "object") return;
+    if(typeof data.xp === "number" && isFinite(data.xp) && data.xp >= 0) state.xp = Math.floor(data.xp);
+    if(typeof data.level === "number" && isFinite(data.level) && data.level >= 1) state.level = Math.floor(data.level);
+    if(typeof data.quizTotal === "number" && isFinite(data.quizTotal) && data.quizTotal >= 0) state.quizTotal = Math.floor(data.quizTotal);
+    if(typeof data.quizCorrect === "number" && isFinite(data.quizCorrect) && data.quizCorrect >= 0) state.quizCorrect = Math.floor(data.quizCorrect);
+    if(typeof data.bestCombo === "number" && isFinite(data.bestCombo) && data.bestCombo >= 0) state.bestCombo = Math.floor(data.bestCombo);
+    if(typeof data.listenTotal === "number" && isFinite(data.listenTotal) && data.listenTotal >= 0) state.listenTotal = Math.floor(data.listenTotal);
+    if(typeof data.listenCorrect === "number" && isFinite(data.listenCorrect) && data.listenCorrect >= 0) state.listenCorrect = Math.floor(data.listenCorrect);
+    const idByEn = {};
+    WORDS.forEach(function(w){ idByEn[w.en] = w.id; });
+    const restore = function(list){
+      const s = new Set();
+      if(!Array.isArray(list)) return s;
+      list.forEach(function(v){
+        if(typeof v === "number" && WORDS[v]) s.add(v);
+        else if(typeof v === "string" && Object.prototype.hasOwnProperty.call(idByEn, v)) s.add(idByEn[v]);
+      });
+      return s;
+    };
+    state.mastered = restore(data.mastered);
+    state.weak = restore(data.weak);
+    /* A word cannot be both mastered and weak; mastered wins. */
+    state.mastered.forEach(function(id){ state.weak.delete(id); });
+  }catch(e){ /* corrupted or unavailable storage: start fresh */ }
+}
+loadProgress();
+function xpForNextLevel(lv){ return 100 + (lv-1)*60; }
+function levelTitle(lv){
+  if(lv>=25) return "英語王";
+  if(lv>=17) return "単語レジェンド";
+  if(lv>=12) return "入試単語マスター";
+  if(lv>=8) return "単語マスター見習い";
+  if(lv>=5) return "単語ハンター";
+  if(lv>=3) return "単語チャレンジャー";
+  return "単語ビギナー";
+}
+function addXP(n){
+  state.xp += n;
+  let need = xpForNextLevel(state.level);
+  let leveled = false;
+  while(state.xp >= need){
+    state.xp -= need; state.level++; leveled = true;
+    need = xpForNextLevel(state.level);
+  }
+  if(leveled){
+    const b = document.getElementById("levelupBanner");
+    b.textContent = "LEVEL UP! Lv." + state.level + " ― " + levelTitle(state.level) + " になった！";
+    b.classList.add("show");
+    setTimeout(function(){ b.classList.remove("show"); }, 4200);
+  }
+  renderStatus();
+}
+function renderStatus(){
+  document.getElementById("lvNum").textContent = state.level;
+  document.getElementById("lvTitle").textContent = levelTitle(state.level);
+  const need = xpForNextLevel(state.level);
+  document.getElementById("xpText").textContent = state.xp + " XP";
+  document.getElementById("xpNext").textContent = "次のレベルまで あと" + (need - state.xp) + " XP";
+  document.getElementById("xpFill").style.width = Math.round(state.xp/need*100) + "%";
+  document.getElementById("statMastered").textContent = state.mastered.size;
+  const tmEl = document.getElementById("todayMastered"); if(tmEl) tmEl.textContent = state.mastered.size;
+  const twEl = document.getElementById("todayWeak"); if(twEl) twEl.textContent = state.weak.size;
+  document.getElementById("statQuiz").textContent = state.quizTotal ? Math.round(state.quizCorrect/state.quizTotal*100) + "%" : "0%";
+  document.getElementById("statCombo").textContent = state.bestCombo;
+  document.getElementById("statTotal").textContent = WORDS.length.toLocaleString();
+  renderRankMap();
+  saveProgress();
+}
+function renderRankMap(){
+  const grid = document.getElementById("rankGrid");
+  grid.innerHTML = "";
+  RANK_ORDER.forEach(function(r){
+    const total = WORDS.filter(function(w){ return w.rank===r; }).length;
+    const done = WORDS.filter(function(w){ return w.rank===r && state.mastered.has(w.id); }).length;
+    const pct = total ? Math.round(done/total*100) : 0;
+    const btn = document.createElement("button");
+    btn.className = "rank-box" + (state.filter===r ? " active" : "");
+    btn.innerHTML = '<span class="rank-badge rb-'+r+'">'+r+'</span>' +
+      '<div class="rank-name">'+RANK_META[r].name+'（'+r+'ランク）</div>' +
+      '<div class="rank-desc">'+RANK_META[r].desc+'</div>' +
+      '<div class="rank-prog"><i style="width:'+pct+'%;background:'+RANK_META[r].color+'"></i></div>' +
+      '<div class="rank-count">'+done.toLocaleString()+' / '+total.toLocaleString()+' 語（'+pct+'%）</div>' +
+      (pct===100 ? '<div class="conquered">制覇！</div>' : '');
+    btn.addEventListener("click", function(){ setFilter(r); });
+    grid.appendChild(btn);
+  });
+}
+
+/* ============ DECK / FILTER ============ */
+function currentPool(){
+  if(state.filter==="ALL") return WORDS.slice();
+  if(state.filter==="WEAK") return WORDS.filter(function(w){ return state.weak.has(w.id); });
+  if(state.filter==="PHRASE") return WORDS.filter(function(w){ return w.cat==="熟語"; });
+  if(state.filter==="IRREG") return WORDS.filter(function(w){ return w.cat==="不規則"; });
+  return WORDS.filter(function(w){ return w.rank===state.filter; });
+}
+function rebuildDeck(keepIdx){
+  state.deck = currentPool();
+  if(!keepIdx) state.idx = 0;
+  if(state.idx >= state.deck.length) state.idx = 0;
+  state.flipped = false;
+  document.getElementById("deckCount").textContent = "対象 " + state.deck.length.toLocaleString() + " 語";
+  renderCard();
+  if(state.mode==="quiz") nextQuiz();
+  if(state.mode==="listen") nextListen();
+}
+function setFilter(f){
+  state.filter = f;
+  document.querySelectorAll("#rankFilters .chip").forEach(function(c){
+    c.classList.toggle("active", c.getAttribute("data-rank")===f);
+  });
+  renderRankMap();
+  rebuildDeck(false);
+  if(state.mode==="list") renderList();
+}
+document.querySelectorAll("#rankFilters .chip").forEach(function(c){
+  c.addEventListener("click", function(){ setFilter(c.getAttribute("data-rank")); });
+});
+
+/* ============ FLASHCARD ============ */
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+function renderCard(){
+  const card = document.getElementById("flashCard");
+  const item = state.deck[state.idx];
+  document.getElementById("cardIndex").textContent = state.deck.length ? (state.idx+1) + " / " + state.deck.length : "0 / 0";
+  document.getElementById("cardProg").style.width = state.deck.length ? Math.round((state.idx)/state.deck.length*100) + "%" : "0%";
+  if(!item){
+    document.getElementById("cardPos").textContent = "";
+    card.innerHTML = '<div class="meaning">この条件の単語はまだありません</div><div class="hint">「苦手だけ」は、まちえた単語がたまると使えるようになります。</div>';
+    return;
+  }
+  document.getElementById("cardPos").textContent = item.pos + (item.cat ? " ・ " + item.cat : "");
+  const tag = '<span class="rank-tag tag-'+item.rank+'">'+item.rank+'ランク ・ '+RANK_META[item.rank].name+'</span>' + (item.cat ? '<span class="cat-tag">'+esc(item.cat)+'</span>' : '');
+  const mastered = state.mastered.has(item.id) ? '<div class="mastered-mark">覚えた済み</div>' : '';
+  const weak = state.weak.has(item.id) ? '<div class="mastered-mark" style="color:var(--red)">苦手リスト入り</div>' : '';
+  if(!state.flipped){
+    const small = item.en.length > 18 ? " small" : "";
+    card.innerHTML = tag + '<div class="word en'+small+'">'+esc(item.en)+'</div>' +
+      '<button class="speak-btn" id="cardSpeak" type="button">音声を聞く</button>' +
+      '<div class="hint">タップで意味を表示</div>' + mastered + weak;
+    const sp = document.getElementById("cardSpeak");
+    sp.addEventListener("click", function(e){ e.stopPropagation(); speak(item.en); });
+  } else {
+    let ex = "";
+    if(item.exEn) ex = '<div class="example"><span class="en">'+esc(item.exEn)+'</span><br>'+esc(item.exJa)+'</div>';
+    card.innerHTML = tag + '<div class="word en small">'+esc(item.en)+'</div><div class="meaning">'+esc(item.ja)+'</div>' + ex + mastered + weak;
+  }
+}
+function speak(text){
+  try{
+    const main = text.split("-")[0].trim();
+    const u = new SpeechSynthesisUtterance(main);
+    u.lang = "en-US"; u.rate = 0.92;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  }catch(e){}
+}
+document.getElementById("flashCard").addEventListener("click", function(){
+  if(!state.deck.length) return;
+  state.flipped = !state.flipped; renderCard();
+});
+function nextCard(){
+  if(!state.deck.length) return;
+  state.idx = (state.idx+1) % state.deck.length;
+  state.flipped = false; renderCard();
+}
+document.getElementById("btnKnow").addEventListener("click", function(){
+  const item = state.deck[state.idx]; if(!item) return;
+  if(!state.mastered.has(item.id)){ state.mastered.add(item.id); addXP(10); }
+  state.weak.delete(item.id);
+  renderStatus(); nextCard();
+});
+document.getElementById("btnDont").addEventListener("click", function(){
+  const item = state.deck[state.idx]; if(!item) return;
+  state.weak.add(item.id); state.mastered.delete(item.id);
+  renderStatus(); nextCard();
+});
+document.getElementById("btnSkip").addEventListener("click", nextCard);
+document.getElementById("btnShuffle").addEventListener("click", function(){
+  for(let i=state.deck.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=state.deck[i]; state.deck[i]=state.deck[j]; state.deck[j]=t; }
+  state.idx=0; state.flipped=false; renderCard();
+});
+document.getElementById("btnRestartDeck").addEventListener("click", function(){ state.idx=0; state.flipped=false; renderCard(); });
+
+/* ============ QUIZ ============ */
+function shuffleArr(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function nextQuiz(){
+  const pool = currentPool();
+  const fb = document.getElementById("quizFeedback");
+  fb.className = "feedback"; fb.innerHTML = "";
+  document.getElementById("btnNextQuiz").hidden = true;
+  if(pool.length < 4){
+    document.getElementById("quizWord").textContent = "—";
+    document.getElementById("quizLabel").textContent = "この条件ではクイズを作れません（4語以上必要です）";
+    document.getElementById("quizChoices").innerHTML = "";
+    document.getElementById("quizInfo").textContent = "";
+    return;
+  }
+  const item = pool[Math.floor(Math.random()*pool.length)];
+  state.quizItem = item; state.quizAnswered = false;
+  state.quizDir = Math.random() < 0.6 ? 0 : 1; /* 0: EN->JA, 1: JA->EN */
+  const others = shuffleArr(WORDS.filter(function(w){ return w.id!==item.id && w.ja!==item.ja; })).slice(0,3);
+  const choices = shuffleArr([item].concat(others));
+  document.getElementById("quizInfo").textContent = item.rank + "ランク ・ " + item.pos + (item.cat ? " ・ " + item.cat : "");
+  document.getElementById("quizCombo").textContent = state.combo >= 2 ? state.combo + " 連続正解中" : "";
+  document.getElementById("quizProg").style.width = state.quizTotal ? Math.round(state.quizCorrect/state.quizTotal*100) + "%" : "0%";
+  const qw = document.getElementById("quizWord");
+  if(state.quizDir===0){
+    document.getElementById("quizLabel").textContent = "この単語の意味は？";
+    qw.textContent = item.en; qw.className = "q-word en";
+    document.getElementById("quizSpeak").style.display = "";
+  } else {
+    document.getElementById("quizLabel").textContent = "この意味の英単語は？";
+    qw.textContent = item.ja; qw.className = "q-word jp";
+    document.getElementById("quizSpeak").style.display = "none";
+  }
+  const box = document.getElementById("quizChoices");
+  box.innerHTML = "";
+  choices.forEach(function(c){
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.textContent = state.quizDir===0 ? c.ja : c.en;
+    b.addEventListener("click", function(){ answerQuiz(c, b); });
+    box.appendChild(b);
+  });
+}
+function answerQuiz(choice, btn){
+  if(state.quizAnswered) return;
+  state.quizAnswered = true;
+  const item = state.quizItem;
+  state.quizTotal++;
+  const correct = choice.id === item.id;
+  const fb = document.getElementById("quizFeedback");
+  document.querySelectorAll("#quizChoices .choice").forEach(function(b){ b.disabled = true; });
+  if(correct){
+    btn.classList.add("correct");
+    state.quizCorrect++; state.combo++;
+    state.bestCombo = Math.max(state.bestCombo, state.combo);
+    let gain = 20;
+    let bonus = "";
+    if(state.combo % 3 === 0){ gain += 10; bonus = " 3連続ボーナス＋10 XP！"; }
+    if(state.filter==="WEAK" || state.weak.has(item.id)){ state.weak.delete(item.id); }
+    if(!state.mastered.has(item.id)) state.mastered.add(item.id);
+    fb.className = "feedback show ok";
+    fb.innerHTML = "正解！ ＋" + gain + " XP" + bonus + "<small>" + esc(item.en) + " ＝ " + esc(item.ja) + "</small>";
+    addXP(gain);
+  } else {
+    btn.classList.add("wrong");
+    state.combo = 0;
+    state.weak.add(item.id); state.mastered.delete(item.id);
+    fb.className = "feedback show ng";
+    fb.innerHTML = "残念… 正解は「" + (state.quizDir===0 ? esc(item.ja) : esc(item.en)) + "」<small>" + esc(item.en) + " ＝ " + esc(item.ja) + " ― 苦手リストに入れました。あとで復習しよう。</small>";
+    renderStatus();
+  }
+  document.getElementById("quizCombo").textContent = state.combo >= 2 ? state.combo + " 連続正解中" : "";
+  document.getElementById("btnNextQuiz").hidden = false;
+}
+document.getElementById("btnNextQuiz").addEventListener("click", nextQuiz);
+document.getElementById("quizSpeak").addEventListener("click", function(){ if(state.quizItem) speak(state.quizItem.en); });
+
+/* ============ LISTENING QUIZ ============
+   The word is played with the device's built-in speech synthesis
+   (speechSynthesis) — no audio files, no external service. The learner
+   hears a single word and picks its meaning from 4 choices. Correct
+   answers earn XP like the regular quiz; wrong answers go to the weak
+   list. Listening totals are saved with the rest of the progress. */
+function renderListenStats(){
+  const el = document.getElementById("listenStats");
+  el.textContent = state.listenTotal
+    ? "聞き取りクイズ： " + state.listenTotal + "問中 " + state.listenCorrect + "問正解（正答率 " + Math.round(state.listenCorrect/state.listenTotal*100) + "%）"
+    : "聞き取りクイズ： まだ解いていません";
+}
+function nextListen(){
+  const pool = currentPool();
+  const fb = document.getElementById("listenFeedback");
+  fb.className = "feedback"; fb.innerHTML = "";
+  document.getElementById("btnNextListen").hidden = true;
+  state.listenItem = null; state.listenAnswered = false;
+  if(pool.length < 4){
+    document.getElementById("listenWord").textContent = "—";
+    document.getElementById("listenInfo").textContent = "";
+    document.getElementById("listenCombo").textContent = "";
+    document.getElementById("listenChoices").innerHTML = "";
+    document.getElementById("listenStats").textContent = "この条件ではクイズを作れません（4語以上必要です）";
+    return;
+  }
+  const item = pool[Math.floor(Math.random()*pool.length)];
+  state.listenItem = item;
+  const others = shuffleArr(WORDS.filter(function(w){ return w.id!==item.id && w.ja!==item.ja; })).slice(0,3);
+  const choices = shuffleArr([item].concat(others));
+  document.getElementById("listenInfo").textContent = item.rank + "ランク ・ " + item.pos + (item.cat ? " ・ " + item.cat : "");
+  document.getElementById("listenCombo").textContent = state.combo >= 2 ? state.combo + " 連続正解中" : "";
+  document.getElementById("listenProg").style.width = state.listenTotal ? Math.round(state.listenCorrect/state.listenTotal*100) + "%" : "0%";
+  document.getElementById("listenWord").textContent = "？ ？ ？";
+  renderListenStats();
+  const box = document.getElementById("listenChoices");
+  box.innerHTML = "";
+  choices.forEach(function(c){
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.setAttribute("data-wid", c.id);
+    b.textContent = c.ja;
+    b.addEventListener("click", function(){ answerListen(c, b); });
+    box.appendChild(b);
+  });
+  speak(item.en);
+}
+function answerListen(choice, btn){
+  if(state.listenAnswered || !state.listenItem) return;
+  state.listenAnswered = true;
+  const item = state.listenItem;
+  state.quizTotal++; state.listenTotal++;
+  const correct = choice.id === item.id;
+  const fb = document.getElementById("listenFeedback");
+  document.querySelectorAll("#listenChoices .choice").forEach(function(b){
+    b.disabled = true;
+    if(Number(b.getAttribute("data-wid")) === item.id) b.classList.add("correct");
+  });
+  document.getElementById("listenWord").textContent = item.en;
+  if(correct){
+    state.quizCorrect++; state.listenCorrect++; state.combo++;
+    state.bestCombo = Math.max(state.bestCombo, state.combo);
+    let gain = 20;
+    let bonus = "";
+    if(state.combo % 3 === 0){ gain += 10; bonus = " 3連続ボーナス＋10 XP！"; }
+    if(state.filter==="WEAK" || state.weak.has(item.id)){ state.weak.delete(item.id); }
+    if(!state.mastered.has(item.id)) state.mastered.add(item.id);
+    fb.className = "feedback show ok";
+    fb.innerHTML = "正解！ ＋" + gain + " XP" + bonus + "<small>" + esc(item.en) + " ＝ " + esc(item.ja) + "</small>";
+    addXP(gain);
+  } else {
+    btn.classList.add("wrong");
+    state.combo = 0;
+    state.weak.add(item.id); state.mastered.delete(item.id);
+    fb.className = "feedback show ng";
+    fb.innerHTML = "残念… 正解は「" + esc(item.ja) + "」<small>" + esc(item.en) + " ＝ " + esc(item.ja) + " ― 苦手リストに入れました。あとで復習しよう。</small>";
+    renderStatus();
+  }
+  document.getElementById("listenCombo").textContent = state.combo >= 2 ? state.combo + " 連続正解中" : "";
+  document.getElementById("listenProg").style.width = state.listenTotal ? Math.round(state.listenCorrect/state.listenTotal*100) + "%" : "0%";
+  renderListenStats();
+  document.getElementById("btnNextListen").hidden = false;
+}
+document.getElementById("btnNextListen").addEventListener("click", nextListen);
+document.getElementById("listenPlay").addEventListener("click", function(){ if(state.listenItem) speak(state.listenItem.en); });
+
+/* ============ LIST ============ */
+function renderList(){
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+  const pool = currentPool().filter(function(w){
+    return !q || w.en.toLowerCase().indexOf(q) >= 0 || w.ja.indexOf(q) >= 0;
+  });
+  const box = document.getElementById("wordList");
+  box.innerHTML = "";
+  const MAX = 300;
+  pool.slice(0, MAX).forEach(function(w){
+    const b = document.createElement("button");
+    b.className = "witem" + (state.mastered.has(w.id) ? " mastered" : "") + (state.weak.has(w.id) ? " weak" : "");
+    b.innerHTML = '<span class="dot"></span><span><span class="w-en en">'+esc(w.en)+'</span><div class="w-ja">'+esc(w.ja)+' ・ '+esc(w.pos)+(w.cat ? ' ・ '+esc(w.cat) : '')+'</div></span><span class="w-meta"><span class="mini-rank rb-'+w.rank+'">'+w.rank+'</span></span>';
+    b.addEventListener("click", function(){
+      setFilter(w.rank);
+      const pool2 = currentPool();
+      const i = pool2.findIndex(function(x){ return x.id===w.id; });
+      switchMode("card");
+      state.deck = pool2; state.idx = Math.max(0,i); state.flipped = true; renderCard();
+      window.scrollTo({top: document.getElementById("view-card").offsetTop - 10, behavior:"smooth"});
+    });
+    box.appendChild(b);
+  });
+  document.getElementById("listEmpty").hidden = pool.length > 0;
+  if(pool.length > MAX){
+    const note = document.createElement("div");
+    note.className = "empty";
+    note.textContent = "上位 " + MAX + " 語を表示中（全 " + pool.length.toLocaleString() + " 語）。検索で絞り込んでね。";
+    box.appendChild(note);
+  }
+}
+document.getElementById("searchInput").addEventListener("input", renderList);
+
+/* ============ MODE SWITCH ============ */
+function switchMode(m){
+  state.mode = m;
+  document.querySelectorAll(".tab").forEach(function(t){ t.classList.toggle("active", t.getAttribute("data-mode")===m); });
+  document.getElementById("view-card").hidden = m!=="card";
+  document.getElementById("view-quiz").hidden = m!=="quiz";
+  document.getElementById("view-listen").hidden = m!=="listen";
+  document.getElementById("view-list").hidden = m!=="list";
+  if(m!=="listen"){ try{ speechSynthesis.cancel(); }catch(e){} }
+  if(m==="quiz") nextQuiz();
+  if(m==="listen") nextListen();
+  if(m==="list") renderList();
+  if(m==="card") renderCard();
+}
+document.querySelectorAll(".tab").forEach(function(t){
+  t.addEventListener("click", function(){ switchMode(t.getAttribute("data-mode")); });
+});
+
+/* ============ INIT ============ */
+document.getElementById("statTotal").textContent = WORDS.length.toLocaleString();
+document.getElementById("totalWordsText").textContent = WORDS.length.toLocaleString();
+document.getElementById("totalWordsText2").textContent = WORDS.length.toLocaleString();
+
+/* ============ START PANEL ============ */
+function goStudy(mode){
+  switchMode(mode);
+  const el = document.querySelector(".tabs");
+  if(el) window.scrollTo({top: Math.max(0, el.offsetTop - 10), behavior:"smooth"});
+}
+document.getElementById("startCard").addEventListener("click", function(){ goStudy("card"); });
+document.getElementById("startQuiz").addEventListener("click", function(){ goStudy("quiz"); });
+document.getElementById("startListen").addEventListener("click", function(){ goStudy("listen"); });
+document.getElementById("startWeak").addEventListener("click", function(){ setFilter("WEAK"); goStudy("card"); });
+renderStatus();
+rebuildDeck(false);
+</script>
+</body>
+</html>
